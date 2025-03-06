@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorizo Links</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/cssanimation.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=VT323&display=swap"
+        rel="stylesheet">
+
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+    <script src="scripts/jquery.js"></script>
+
+</head>
+
+<body onload="loadText()">
+    <div class="container">
+        <div class="quiz-container">
+            <div class="header">
+                <button class="round back_disabled" onclick="next();">
+                    <a class="link"><i class="fa-solid fa-arrow-left"></i></a>
+                </button>
+                <div class="progress-container">
+                    <span class="question-number">Pregunta 1/4</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+                <button  class="round next" onclick="next();">
+                    <a class="link"><i class="fa-solid fa-arrow-right"></i></a>
+                </button>
+            </div>
+            
+            <div class="question-container">
+                <img src="assets/game/persona_1.jpeg" alt="Pregunta" class="question-image">
+                <p class="question-text">¿Cómo se llama?</p>
+            </div>
+            
+            <div class="options-container">
+                <button class="option">María</button>
+                <button class="option">Elena</button>
+                <button class="option">Paula</button>
+            </div>
+        </div>
+
+
+
+        <!-- Write your comments here 
+         <div class="links">
+            <a href="https://descargar-memorizo.com" class="link">📥 Descargar la App</a>
+            <a href="https://ver-demo-memorizo.com" class="link">🎮 Ver la Demo</a>
+            <a href="https://reto-memorizo.com" class="link">🔥 Unirse al Reto</a>
+        </div>
+        <p>Escanea para más información:</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://memorizo.com" alt="QR Code" class="qr">
+        -->
+    </div>
+    <script type="text/javascript" src="scripts/script.js"></script>
+
+</body>
+
+</html>
