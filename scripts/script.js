@@ -71,10 +71,10 @@ function loadText(){
 
     if (currentText == 0){
         $("#btn_back").removeClass("btn_round_gray");
-        $("#btn_Back").addClass("btn_round_disabled");
+        $("#btn_back").addClass("btn_round_disabled");
     } else {
-        $("#btn_back").removeClass("back_disabled");
-        $("#btn_Back").addClass("btn_round_disabled");
+        $("#btn_back").removeClass("btn_round_gray");
+        $("#btn_back").addClass("btn_round_disabled");
     }
 
     if(currentText < text_Memo.length - 1){

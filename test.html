@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorizo Links</title>
+    <title>Reto del Pitch de Memorizo</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cssanimation.css">
 
@@ -20,12 +22,11 @@
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
 
     <script src="scripts/jquery.js"></script>
-
 </head>
 
-<body onload="loadText()">
+<body>
     <div class="container">
-        <div class="quiz-container">
+        <div class="card" id="card">
             <div class="header">
                 <button class="round back_disabled" onclick="next();">
                     <a class="link"><i class="fa-solid fa-arrow-left"></i></a>
@@ -42,7 +43,7 @@
             </div>
             
             <div class="question-container">
-                <img src="assets/game/persona_1.jpeg" alt="Pregunta" class="question-image">
+                <img src="assets/game/persona_1.jpeg" width="20px"alt="Pregunta" class="question-image">
                 <p class="question-text">¿Cómo se llama?</p>
             </div>
             
@@ -52,21 +53,8 @@
                 <button class="option">Paula</button>
             </div>
         </div>
-
-
-
-        <!-- Write your comments here 
-         <div class="links">
-            <a href="https://descargar-memorizo.com" class="link">📥 Descargar la App</a>
-            <a href="https://ver-demo-memorizo.com" class="link">🎮 Ver la Demo</a>
-            <a href="https://reto-memorizo.com" class="link">🔥 Unirse al Reto</a>
-        </div>
-        <p>Escanea para más información:</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://memorizo.com" alt="QR Code" class="qr">
-        -->
     </div>
     <script type="text/javascript" src="scripts/script.js"></script>
-
 </body>
 
 </html>
