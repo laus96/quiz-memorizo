@@ -1,14 +1,25 @@
-/*const questions = [
+const questions = [
     {
-        image: "persona1.jpg",
-        correct: "Laura",
-        options: ["Carlos", "Laura", "Ana", "Pedro"]
+        image: "assets/game/persona_1.jpg",
+        correct: "Carlos",
+        options: ["Carlos", "Luis", "Miguel"]
     },
     {
-        image: "persona2.jpg",
-        correct: "Pedro",
-        options: ["Luis", "Marta", "Pedro", "Sofía"]
+        image: "assets/game/persona_2.jpg",
+        correct: "Macarena",
+        options: ["Sofia", "Marta", "Macarena"]
+    },
+    {
+        image: "assets/game/persona_3.jpg",
+        correct: "Borja",
+        options: ["Adrian", "Borja", "Daniel"]
+    },
+    {
+        image: "assets/game/persona_1.jpg",
+        correct: "Laura",
+        options: ["Sara", "Laura", "Carla"]
     }
+    
 ];
 
 let currentQuestion = 0;
@@ -44,4 +55,4 @@ function checkAnswer(answer) {
 }
 
 loadQuestion();
-*/
+

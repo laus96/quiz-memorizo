@@ -52,37 +52,37 @@ let currentQuestion = 0;
 const text_Memo = [
   "¡Hola! Soy Memo, el miembro principal de este equipo.",
   "¡Para conseguir el enlance a Figma tendrás que completar mi reto!",
-  "¡Atento!",
+  "¿Sabrás decirme el nombre de todos mis compañeros?",
 ];
 
 const image_Memo = [
     "assets/icons/memo_Hola.png",
     "assets/icons/memo_feliz.png",
-    "assets/icons/memo_muyFeliz.png",
+    "assets/icons/memo_Pensando.png",
   ];
 
 function loadText(){
 
-    document.getElementById("texto_Memo").innerHTML = text_Memo[currentText];
+    document.getElementById("memo_Bubble").innerHTML = text_Memo[currentText];
     //$( "#speech_Memo" ).addClass( "animate__animated animate__bounce" );
     $("#memo").attr("src",image_Memo[currentText]);
     $( "#memo" ).addClass( "animate__animated animate__bounce" );
     /*$("#btn_back").css({ display: "none" });*/
 
     if (currentText == 0){
-        $("#btn_back").removeClass("back");
-        $("#btn_back").addClass("back_disabled");
+        $("#btn_Back").removeClass("btn_round_gray");
+        $("#btn_Back").addClass("btn_round_disabled");
     } else {
-        $("#btn_back").removeClass("back_disabled");
-        $("#btn_back").addClass("back");
+        $("#btn_Back").removeClass("back_disabled");
+        $("#btn_Back").addClass("btn_round_disabled");
     }
 
     if(currentText < text_Memo.length - 1){
         $("#btn_empezar").css({ display: "none" });
-        $("#btn_next").css({ display: "" });
+        $("#btn_Next").css({ display: "" });
     } else {
         
-        $("#btn_next").css({ display: "none" });
+        $("#btn_Next").css({ display: "none" });
         $("#btn_empezar").css({ display: "" });
     }
 
@@ -104,7 +104,7 @@ function next() {
 
 function back() {
     currentText--;
-    $( "#speech_Memo" ).removeClass( "animate__animated animate__bounce" );
+    $( "#memo_Speech" ).removeClass( "animate__animated animate__bounce" );
     $( "#memo" ).removeClass( "animate__animated animate__bounce" );
   
     if (currentText >= 0 ) {

@@ -2,9 +2,12 @@
 <html lang="es">
 
 <head>
+    <title>Tarjeta Centrada</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorizo Links</title>
+    <title>Reto del Pitch de Memorizo</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cssanimation.css">
 
@@ -20,53 +23,33 @@
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
 
     <script src="scripts/jquery.js"></script>
-
 </head>
 
-<body onload="loadText()">
+<body onload="loadText();">
     <div class="container">
-        <div class="speech">
-            <div id="speech_Memo" class="speech-bubble" style="display: flex; justify-content: center">
-                <span id="texto_Memo"></span>
+        <div class="card" id="card">
+            <!--  <h1 class="title">Mi Tarjeta</h1> 
+            <p class="text">Este es un ejemplo de tarjeta centrada y responsive.</p>
+             -->
+            <div class="speech">
+                <div id="memo_Speech" class="speech-bubble" style="display: flex; justify-content: center">
+                    <span id="memo_Bubble"></span>
+                </div>
+                <img src="assets/icons/memo_base.png" alt="Logo de Memo" class="logo " id="memo">
             </div>
-            <img id="memo" src="assets/icons/memo_Hola.png" alt="Memorizo" class="memo">
-
-        </div>
-        <div class="navbar">
-            <div class="navigation">
-                <button id="btn_next" class="round next" onclick="next();">
-                    <a class="link"><i class="fa-solid fa-arrow-right"></i></a>
+            <div class="buttons">
+                <button id="btn_Back" onclick="back()" class="btn_round_gray back"><i class="fa-solid fa-arrow-right"></i></button>
+                <button id="btn_Next" onclick="next()" class="btn_round_secundary next"><i class="fa-solid fa-arrow-right"></i></button>
+                <button id="btn_empezar" class="btn_semi_large_secundary next">
+                    <a class="link" href="test.html"> <i class="fa-solid fa-gamepad"></i> EMPEZAR </a>
                 </button>
-                <button id="btn_back" class="round back_disabled" onclick="back();">
-                    <a class="link"><i class="fa-solid fa-arrow-left"></i></a>
-                </button>
-
-                <button style="display:none" id="btn_empezar" class="round_text next">
-                    <a href="test.html" class="link"><i class="fa-solid fa-gamepad"></i> EMPEZAR </a>
-                </button>
-
             </div>
-            <div class="links">
-                <button class="btn_link just_link">
-                    <a class="link" href="enlaces.html"> <i class="fa-solid fa-forward"></i> Saltar reto </a>
-            </div>
-            </button>
+            
+            <button class="btn_large_gray skip">
+                <a class="link" href="enlaces.html"> <i class="fa-solid fa-forward"></i> Saltar reto </a> </button>
         </div>
-
-
-
-        <!-- Write your comments here 
-         <div class="links">
-            <a href="https://descargar-memorizo.com" class="link">📥 Descargar la App</a>
-            <a href="https://ver-demo-memorizo.com" class="link">🎮 Ver la Demo</a>
-            <a href="https://reto-memorizo.com" class="link">🔥 Unirse al Reto</a>
-        </div>
-        <p>Escanea para más información:</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://memorizo.com" alt="QR Code" class="qr">
-        -->
     </div>
     <script type="text/javascript" src="scripts/script.js"></script>
-
 </body>
 
 </html>
