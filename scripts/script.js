@@ -63,26 +63,26 @@ const image_Memo = [
 
 function loadText(){
 
-    document.getElementById("memo_Bubble").innerHTML = text_Memo[currentText];
+    document.getElementById("memo_bubble").innerHTML = text_Memo[currentText];
     //$( "#speech_Memo" ).addClass( "animate__animated animate__bounce" );
     $("#memo").attr("src",image_Memo[currentText]);
     $( "#memo" ).addClass( "animate__animated animate__bounce" );
     /*$("#btn_back").css({ display: "none" });*/
 
     if (currentText == 0){
-        $("#btn_Back").removeClass("btn_round_gray");
+        $("#btn_back").removeClass("btn_round_gray");
         $("#btn_Back").addClass("btn_round_disabled");
     } else {
-        $("#btn_Back").removeClass("back_disabled");
+        $("#btn_back").removeClass("back_disabled");
         $("#btn_Back").addClass("btn_round_disabled");
     }
 
     if(currentText < text_Memo.length - 1){
         $("#btn_empezar").css({ display: "none" });
-        $("#btn_Next").css({ display: "" });
+        $("#btn_next").css({ display: "" });
     } else {
         
-        $("#btn_Next").css({ display: "none" });
+        $("#btn_next").css({ display: "none" });
         $("#btn_empezar").css({ display: "" });
     }
 
