@@ -54,15 +54,27 @@ function handleAnswerSelection(selectedOption, selectedAnswer) {
 
   if (selectedAnswer === currentQuestion.correctAnswer) {
     selectedOption.classList.add("correct");
+    $("#feedback").text("¡Muy bien!");
+    $("#feedback").css("display", "inline-block");
+    $("#feedback").addClass("correct-answer");
     setTimeout(() => {
       selectedOption.classList.remove("correct", "wrong");
+      $("#feedback").css("display", "none");
+      $("#feedback").removeClass("correct-answer");
       loadNextQuestion();
-    }, 1000);
+    }, 1200);
   } else {
     selectedOption.classList.add("wrong");
+    $("#feedback").text("¡Vuelve a intentarlo!");
+
+    $("#feedback").css("display", "inline-block");
+    $("#feedback").addClass("try-again");
+
     setTimeout(() => {
       selectedOption.classList.remove("correct", "wrong");
-    }, 1000);
+      $("#feedback").css("display", "none");
+      $("#feedback").removeClass("try-again");
+    }, 1200);
   }
 }
 
@@ -75,14 +87,13 @@ function loadNextQuestion() {
     //triggerInfiniteConfetti();
     updateProgressBar();
     setTimeout(() => {
-        $("#felicidades").trigger("click");
-      }, 1000);
+      $("#felicidades").trigger("click");
+    }, 1000);
   }
 }
 
 function updateProgressBar() {
-  const progressPercentage =
-    ((currentQuestionIndex) / questions.length) * 100;
+  const progressPercentage = (currentQuestionIndex / questions.length) * 100;
   document.getElementById("progress").style.width = progressPercentage + "%";
 }
 
