@@ -1,0 +1,127 @@
+.btn {
+    border-radius: var(--btn-radius);
+    text-align: center;
+    padding: var(--btn-padding);
+    margin-bottom: 30px;
+    font-weight: var(--btn-font-weight);
+    border: none !important;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-rounded {
+    border-radius: var(--btn-circle-radius);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-large {
+    width: var(--btn-size-large);
+    font-size: var(--btn-font-size);
+    height: var(--btn-height);
+
+}
+
+.btn-medium {
+    width: var(--btn-size-medium);
+    font-size: var(--btn-font-size);
+    height: var(--btn-height);
+
+}
+
+.btn-small {
+    width: var(--btn-size-small);
+    font-size: var(--btn-font-size);
+    height: var(--btn-height);
+
+}
+
+.btn-large-rounded {
+    width: var(--btn-size-large);
+    height: var(--btn-size-large);
+    font-size: var(--btn-font-size);
+
+}
+
+.btn-medium-rounded {
+    width: var(--btn-size-medium);
+    height: var(--btn-size-medium);
+    font-size: var(--btn-font-size);
+
+}
+
+.btn-small-rounded {
+    width: var(--btn-size-small);
+    height: var(--btn-size-small);
+    font-size: var(--btn-font-size);
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg);
+}
+
+.btn-secundary {
+    background-color: var(--btn-secundary-bg);
+    color: var(--btn-text-light);
+}
+
+.btn-secundary:hover {
+    background-color: var(--btn-secundary-hover-bg);
+}
+
+.btn-contrast {
+    background-color: var(--btn-contrast-bg);
+    color: var(--btn-text-dark);
+    border: 1px solid var(--btn-contrast-border);
+}
+
+.btn-contrast:hover {
+    background-color: var(--btn-contrast-hover-bg);
+}
+
+.btn-disabled {
+    background-color: var(--btn-disabled-bg);
+    color: var(--text-disabled);
+    border: 1px solid var(--btn-contrast-border) !important;
+    ;
+}
+
+.link {
+    text-decoration: none;
+    color: inherits;
+}
+
+.back,
+.next {
+    position: absolute;
+    top: 50%;
+}
+
+.back {
+    margin-left: 40px;
+    left: 0;
+}
+
+.next {
+    margin-right: 40px;
+    right: 0;
+}
+
+.skip {
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -4,9 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorizo Links</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/cssanimation.css">
+    <title>Reto del Pitch de Memorizo</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/libs/animate.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,51 +25,42 @@
     <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
 
-    <script src="scripts/jquery.js"></script>
-
 </head>
 
 <body>
     <div class="container">
-        <div class="links">
-
-            <div id="speech_Memo" class="speech-bubble" style="display: flex; justify-content: center">
-                <span id="texto_Memo">¡Aquí tienes los enlaces!</span>
+        <div class="card" id="card">
+            <div class="speech-links">
+                <div id="memo_speech" class="speech-bubble" style="display: flex; justify-content: center">
+                    <span class="text-bubble" id="memo-bubble"></span>
+                </div>
+                <img src="" alt="Logo de Memo" class="logo Memo" id="memo">
             </div>
-            <img id="memo" src="assets/icons/memo_Hola.png" alt="Memorizo" class="memo">
 
- 
+            <div class="links">
+                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-primary nav-link">
+                    <a class="link"> <i class="fa-brands fa-figma"></i> FIGMA COMPLETO</a>
+                </button>
 
-        <button class="btn_link brand " onclick="back();">
-            <a class="link"  href="index.html"> <i class="fa-brands fa-figma"></i> FIGMA COMPLETO</a>
-        </button>
+                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-secundary nav-link">
+                    <a class="link"> <i class="fa-regular fa-star"></i> RETO DIARIO DE FIGMA</a>
+                </button>
 
-        <button class="btn_link secundary" onclick="back();">
-            <a class="link"  href="index.html"> <i class="fa-regular fa-star"></i> RETO DIARIO DE FIGMA</a>
-        </button>
+                <button onclick="javascript:location.href='test.html'" class="btn btn-large btn-contrast nav-link">
+                    <a class="link"> <i class="fa-regular fa-arrow-left"></i> VOLVER A EMPEZAR </a>
+                </button>
+            </div>
+           
 
-        <button class="btn_link terciary" onclick="back();">
-            <a class="link" href="index.html"> <i class="fa-regular fa-arrow-left"></i> VOLVER A EMPEZAR </a>
-        </button>
-
-
-        
-       </div>
+        </div>
     </div>
 
+    <script src="libs/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/enlaces.js"></script>
 
-        <!-- Write your comments here 
-         <div class="links">
-            <a href="https://descargar-memorizo.com" class="link">📥 Descargar la App</a>
-            <a href="https://ver-demo-memorizo.com" class="link">🎮 Ver la Demo</a>
-            <a href="https://reto-memorizo.com" class="link">🔥 Unirse al Reto</a>
-        </div>
-        <p>Escanea para más información:</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://memorizo.com" alt="QR Code" class="qr">
-        -->
- 
-    <script type="text/javascript" src="scripts/game.js"></script>
 
 </body>
+
 
 </html>

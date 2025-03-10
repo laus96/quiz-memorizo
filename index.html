@@ -7,8 +7,12 @@
     <title>Reto del Pitch de Memorizo</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/cssanimation.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/libs/animate.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,34 +25,36 @@
     <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
 
-    <script src="scripts/jquery.js"></script>
 </head>
 
-<body onload="loadText();">
+<body>
     <div class="container">
         <div class="card" id="card">
             <!--  <h1 class="title">Mi Tarjeta</h1> 
             <p class="text">Este es un ejemplo de tarjeta centrada y responsive.</p>
              -->
             <div class="speech">
-                <div id="memo_speech" class="speech-bubble" style="display: flex; justify-content: center">
-                    <span id="memo_bubble"></span>
+                <div id="memo-speech" class="speech-bubble" style="display: flex; justify-content: center">
+                    <span class="text-bubble" id="memo-bubble"></span>
                 </div>
-                <img src="assets/icons/memo_base.png" alt="Logo de Memo" class="logo " id="memo">
+                <img src="assets/icons/memo_base.png" alt="¡Hola, soy Memorizo!" class="logo " id="memo">
             </div>
             <div class="buttons">
-                <button id="btn_back" onclick="back()" class="btn_round_gray back"><i class="fa-solid fa-arrow-left"></i></button>
-                <button id="btn_next" onclick="next()" class="btn_round_secundary next"><i class="fa-solid fa-arrow-right"></i></button>
-                <button onclick="javascript:location.href='test.html'" id="btn_empezar" class="btn_semi_large_secundary next">
+                <button id="btn-back" onclick="back()" class="btn-rounded btn-small-rounded btn-contrast back"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="btn-next" onclick="next()" class="btn-rounded btn-small-rounded btn-secundary next"><i class="fa-solid fa-arrow-right"></i></button>
+                <button onclick="javascript:location.href='test.html'" id="btn-empezar" class="btn btn-medium btn-secundary next nav-link">
                     <a class="link"> <i class="fa-solid fa-gamepad"></i> EMPEZAR </a>
                 </button>
             </div>
             
-            <button onclick="javascript:location.href='enlaces.html'" class="btn_large_gray skip">
+            <button onclick="javascript:location.href='enlaces.html'" class="btn btn-large btn-contrast skip nav-link">
                 <a class="link"> <i class="fa-solid fa-forward"></i> Saltar reto </a> </button>
         </div>
     </div>
-    <script type="text/javascript" src="scripts/script.js"></script>
+
+    <script src="libs/jquery.js"></script>
+    <script src="js/script.js"></script>    
+    <script src="js/index.js"></script>
 </body>
 
 </html>

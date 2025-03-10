@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/test.css">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/libs/animate.css">
 
@@ -29,46 +27,40 @@
 
 </head>
 
-<body onload="loadQuestion()">
+<body onload="triggerInfiniteConfetti()">
     <div class="container">
-        <div class="card-game" id="card-game">
-            <!-- Barra de progreso (ahora arriba) -->
-            <div class="progress-container">
-                <span class="question-number">Pregunta <span id="questionNumber">1</span>/4</span>
-                <div class="progress-bar">
-                    <div class="progress" id="progress"></div>
+        <div class="card" id="card">
+            <div class="speech-links">
+                <div id="memo_speech" class="speech-bubble" style="display: flex; justify-content: center">
+                    <span class="text_dark text-bubble">¡FELICIDADES!<br> Has completado el reto.</span>
                 </div>
+                <img src="assets/icons/memo_muyFeliz.png" alt="Logo de Memo" class="logo Memo">
             </div>
-    
-            <!-- Imagen de la pregunta -->
-            <div class="question-image">
-                <img id="questionImage" style="width:200px"  alt="Imagen de la pregunta">
-            </div>
-    
-            <!-- Pregunta -->
-            <h2 id="questionText" class="question-text"></h2>
-    
-            <!-- Opciones de respuesta -->
-            <div class="options">
-                <button class="option"></button>
-                <button class="option"></button>
-                <button class="option"></button>
-                <div class="options">
-                    CORRECTO
-                </div>
+
+            <div class="links">
+                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-primary nav-link">
+                    <a class="link"> <i class="fa-brands fa-figma"></i> FIGMA COMPLETO</a>
+                </button>
+
+                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-secundary nav-link">
+                    <a class="link"> <i class="fa-regular fa-star"></i> RETO DIARIO DE FIGMA</a>
+                </button>
+
+                <button onclick="javascript:location.href='test.html'" class="btn btn-large btn-contrast nav-link">
+                    <a class="link"> <i class="fa-regular fa-arrow-left"></i> VOLVER A EMPEZAR </a>
+                </button>
             </div>
            
+
         </div>
-        <button id="felicidades" style="display: none;" onclick="javascript:location.href='felicidades.html'" class="nav-link">
-            <a class="link"> <i class="fa-solid fa-forward"></i> Saltar reto </a> </button>
-       
     </div>
-    
-    
+
     <script src="libs/jquery.js"></script>
-    <script src="js/script.js"></script>    
-    <script src="js/test.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/felicidades.js"></script>
+
 
 </body>
+
 
 </html>
