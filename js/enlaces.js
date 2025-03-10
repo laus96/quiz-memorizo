@@ -4,17 +4,17 @@ let lastAnimation = "";
 const memoSpeaks = [
   {
     text: "¿No quieres jugar conmigo?",
-    imageUrl: "assets/icons/memo_error.png",
+    imageUrl: "assets/icons/memo-error.png",
     animation: "animate__animated animate__pulse",
   },
   {
     text: "Aquí tienes los enlaces para nuestro proyecto.",
-    imageUrl: "assets/icons/memo_triste.png",
+    imageUrl: "assets/icons/memo-triste.png",
     animation: "animate__animated animate__bounce",
   },
   {
     text: "¡Disfruta de la presentación!.",
-    imageUrl: "assets/icons/memo_base.png",
+    imageUrl: "assets/icons/memo-base.png",
     animation: "animate__animated animate__tada",
   },
 ];

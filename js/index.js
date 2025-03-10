@@ -4,17 +4,17 @@ let lastAnimation = "";
 const memoSpeaks = [
   {
     text: "¡Hola! Soy Memo, el miembro principal de este equipo.",
-    imageUrl: "assets/icons/memo_Hola.png",
+    imageUrl: "assets/icons/memo-hola.png",
     animation: "animate__animated animate__bounce",
   },
   {
     text: "¡Para conseguir el enlace a Figma tendrás que completar mi reto!",
-    imageUrl: "assets/icons/memo_sorpresa.png",
+    imageUrl: "assets/icons/memo-sorpresa.png",
     animation: "animate__animated animate__bounce",
   },
   {
     text: "¿Sabrás decirme el nombre de todos mis compañeros?",
-    imageUrl: "assets/icons/memo_MuyFeliz.png",
+    imageUrl: "assets/icons/memo-muyfeliz.png",
     animation: "animate__animated animate__tada",
   },
 ];

@@ -4,17 +4,17 @@ let lastAnimation = "";
 const memoSpeaks = [
   {
     text: "¡ENHORABUENA! Has terminado mi reto.",
-    imageUrl: "assets/icons/memo_MuyFeliz.png",
+    imageUrl: "assets/icons/memo-muyfeliz.png",
     animation: "animate__animated animate__jello",
   },
   {
     text: "Lo prometido es deuda, aquí tienes los enlaces de la presentación.",
-    imageUrl: "assets/icons/memo_sonrisa.png",
+    imageUrl: "assets/icons/memo-sonrisa.png",
     animation: "animate__animated animate__bounce",
   },
   {
     text: "Disfruta de nuestro prototipo.",
-    imageUrl: "assets/icons/memo_base.png",
+    imageUrl: "assets/icons/memo-base.png",
     animation: "animate__animated animate__tada",
   },
 ];
