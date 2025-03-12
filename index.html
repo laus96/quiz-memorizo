@@ -24,8 +24,8 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="card page-in" id="card">
+    <div class="container" id="container-index">
+        <div class="card page-in" id="card-index">
             <div class="speech">
                 <div id="memo-speech" class="speech-bubble">
                     <span id="memo-bubble"></span>
@@ -48,9 +48,43 @@
             <button onclick="location.href='enlaces.html'" class="btn btn-large btn-contrast skip nav-link">
                 <i class="fa-solid fa-forward"></i> Saltar reto
             </button>
+            <button onclick="toggle()" class="btn btn-large btn-contrast skip">
+                <i class="fa-solid fa-forward"></i> toggle
+            </button>
         </div>
     </div>
+    <div class="container" id="container-quiz" style="display: none;">
+        <div class="card" id="card-quiz">
+            <!-- Barra de progreso -->
+            <div class="progress-container">
+                <span class="question-number">Pregunta <span id="questionNumber">1</span>/4</span>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+    
+            <!-- Imagen de la pregunta -->
+            <div class="question-image">
+                <img id="questionImage" alt="Imagen de la pregunta">
+            </div>
+    
+            <!-- Pregunta -->
+            <h2 id="questionText" class="question-text"></h2>
+    
+            <!-- Opciones de respuesta -->
+            <div class="options">
+                <button class="option"></button>
+                <button class="option"></button>
+                <button class="option"></button>
+                <!--<span id="feedback" class="feedback">text</span>-->
+            </div>
+        </div>
 
+        <button id="felicidades" class="nav-link" style="display: none;" onclick="location.href='felicidades.html'">
+            <i class="fa-solid fa-forward"></i> Saltar reto
+        </button>
+    
+    </div>
     <!-- Scripts -->
     <script src="libs/jquery.js"></script>
     <script src="js/script.js"></script>
@@ -58,6 +92,21 @@
         $(document).ready(() => {
             loadContent('index');
           });
+          function toggle() {
+            var containerQuiz = document.getElementById('container-quiz');
+            var containerIndex = document.getElementById('container-index');
+
+            var cardQuiz = document.getElementById('card-quiz');
+            var cardIndex = document.getElementById('card-index');
+
+            containerIndex.style.display = containerIndex.style.display === 'none'? '' : 'none';
+            containerQuiz.style.display = containerQuiz.style.display === 'none'? '' : 'none';
+
+            cardIndex.classList.add('page-out');
+            cardQuiz.classList.add('page-in');
+            
+
+        }
     </script>
 </body>
 </html>
