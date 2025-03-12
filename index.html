@@ -7,54 +7,53 @@
     <title>Reto del Pitch de Memorizo</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <link rel="stylesheet" href="css/theme.css">
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/libs/animate.css">
 
-
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=VT323&display=swap"
-        rel="stylesheet">
-
+    <!-- FontAwesome -->
     <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
-
+    
 </head>
 
-<body>
+<body onload="loadContent('index')">
     <div class="container">
-        <div class="card" id="card">
-            <!--  <h1 class="title">Mi Tarjeta</h1> 
-            <p class="text">Este es un ejemplo de tarjeta centrada y responsive.</p>
-             -->
+        <div class="card page-in" id="card">
             <div class="speech">
-                <div id="memo-speech" class="speech-bubble" style="display: flex; justify-content: center">
-                    <span class="text-bubble" id="memo-bubble"></span>
+                <div id="memo-speech" class="speech-bubble">
+                    <span id="memo-bubble"></span>
                 </div>
-                <img src="assets/icons/memo_base.png" alt="¡Hola, soy Memorizo!" class="logo " id="memo">
-            </div>
-            <div class="buttons">
-                <button id="btn-back" onclick="back()" class="btn-rounded btn-small-rounded btn-contrast back"><i class="fa-solid fa-arrow-left"></i></button>
-                <button id="btn-next" onclick="next()" class="btn-rounded btn-small-rounded btn-secundary next"><i class="fa-solid fa-arrow-right"></i></button>
-                <button onclick="javascript:location.href='test.html'" id="btn-empezar" class="btn btn-medium btn-secundary next nav-link">
-                    <a class="link"> <i class="fa-solid fa-gamepad"></i> EMPEZAR </a>
-                </button>
+                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo">
             </div>
             
-            <button onclick="javascript:location.href='enlaces.html'" class="btn btn-large btn-contrast skip nav-link">
-                <a class="link"> <i class="fa-solid fa-forward"></i> Saltar reto </a> </button>
+            <div class="buttons">
+                <button id="btn-back" onclick="navigateMemo('back')" class="btn btn-small btn-contrast back">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button id="btn-next" onclick="navigateMemo('next')" class="btn btn-small btn-secondary next">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button id="btn-empezar" onclick="location.href='test.html'" class="btn btn-medium btn-secondary next nav-link">
+                    <i class="fa-solid fa-gamepad"></i> EMPEZAR
+                </button>
+            </div>
+
+            <button onclick="location.href='enlaces.html'" class="btn btn-large btn-contrast skip nav-link">
+                <i class="fa-solid fa-forward"></i> Saltar reto
+            </button>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="libs/jquery.js"></script>
-    <script src="js/script.js"></script>    
-    <script src="js/index.js"></script>
+    <script src="js/script.js"></script>
 </body>
-
 </html>
+       

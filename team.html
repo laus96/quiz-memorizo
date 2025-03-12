@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto del Pitch de Memorizo</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/libs/animate.css">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" id="card">
+
+            <div class="team-container">
+                <div class="speech-team">
+                    <div class="logo-container">
+                        <img src="assets/icons/memo-base.png" class="logo-small" alt="¡Hola, soy Memo!" class="logo"
+                            id="memo">
+                    </div>
+                    <div id="memo_speech" class="speech-bubble-left">
+                        <span id="memo-bubble"> ¡Toca en cada tarjeta para saber más!</span>
+                    </div>
+                   
+                </div>
+                <!-- Miembro 1 -->
+                <div class="team-member-card" data-member="1">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_1.jpg" alt="Miembro 1" class="member-photo">
+                            <p class="member-name">Borja</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Objetivo y propuesta de valor.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="team-member-card" data-member="2">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_2.jpg" alt="Miembro 2" class="member-photo">
+                            <p class="member-name">Macarena</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Branding y diseño.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="team-member-card" data-member="3">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_3.jpg" alt="Miembro 3" class="member-photo">
+                            <p class="member-name">Carlos</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Demo de Memorizo.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 4 -->
+                <div class="team-member-card" data-member="4">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_4.jpg" alt="Miembro 4" class="member-photo">
+                            <p class="member-name">Laura</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Sistema de diseño.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón para volver al índice -->
+            <button onclick="location.href='felicidades.html'" class="btn btn-full-large btn-secondary nav-link link">
+                <span><i class="fa-solid fa-arrow-left"></i> VOLVER</span>
+            </button>
+            <button onclick="location.href='index.html'" class="btn btn-full-large btn-contrast nav-link link">
+                <span><i class="fa-solid fa-house"></i> VOLVER A INICIO</span>
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="libs/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.querySelectorAll('.team-member-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reto del Pitch de Memorizo</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <link rel="stylesheet" href="css/theme.css">
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/libs/animate.css">
 
-
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=VT323&display=swap"
-        rel="stylesheet">
-
-    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-    <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
-    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
-
+    <!-- FontAwesome -->
+    <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body onload="loadQuestion()">
+<body onload="loadContent('quiz')">
     <div class="container">
-        <div class="card-game" id="card-game">
-            <!-- Barra de progreso (ahora arriba) -->
+        <div class="card" id="card">
+            <!-- Barra de progreso -->
             <div class="progress-container">
                 <span class="question-number">Pregunta <span id="questionNumber">1</span>/4</span>
                 <div class="progress-bar">
@@ -42,7 +33,7 @@
     
             <!-- Imagen de la pregunta -->
             <div class="question-image">
-                <img id="questionImage" style="width:200px"  alt="Imagen de la pregunta">
+                <img id="questionImage" alt="Imagen de la pregunta">
             </div>
     
             <!-- Pregunta -->
@@ -53,22 +44,18 @@
                 <button class="option"></button>
                 <button class="option"></button>
                 <button class="option"></button>
-                <div>
-                    <span style="display: none;" id="feedback" class="feedback"></span>
-                </div>
+                <!--<span id="feedback" class="feedback">text</span>-->
             </div>
-           
         </div>
-        <button id="felicidades" style="display: none;" onclick="javascript:location.href='felicidades.html'" class="nav-link">
-            <a class="link"> <i class="fa-solid fa-forward"></i> Saltar reto </a> </button>
-       
+
+        <button id="felicidades" class="nav-link" style="display: none;" onclick="location.href='felicidades.html'">
+            <i class="fa-solid fa-forward"></i> Saltar reto
+        </button>
     </div>
     
-    
+    <!-- Scripts -->
     <script src="libs/jquery.js"></script>
     <script src="js/script.js"></script>    
-    <script src="js/test.js"></script>
-
 </body>
 
 </html>

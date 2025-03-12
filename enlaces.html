@@ -7,59 +7,54 @@
     <title>Reto del Pitch de Memorizo</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <link rel="stylesheet" href="css/theme.css">
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/libs/animate.css">
 
-
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Share+Tech+Mono&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=VT323&display=swap"
-        rel="stylesheet">
-
+    <!-- FontAwesome -->
     <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
 
 </head>
 
-<body>
+<body onload="loadLinks()">
+    <div id="confetti-container"></div>
     <div class="container">
         <div class="card" id="card">
             <div class="speech-links">
-                <div id="memo_speech" class="speech-bubble" style="display: flex; justify-content: center">
-                    <span class="text-bubble" id="memo-bubble"></span>
+                <div id="memo_speech" class="speech-bubble">
+                    <span id="memo-bubble"></span>
                 </div>
-                <img src="" alt="Logo de Memo" class="logo Memo" id="memo">
+                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo">
             </div>
 
             <div class="links">
-                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-primary nav-link">
-                    <a class="link"> <i class="fa-brands fa-figma"></i> FIGMA COMPLETO</a>
+                <button id="redirectFullFigma" class="btn btn-large btn-primary link">
+                    <span><i class="fa-brands fa-figma"></i> FIGMA COMPLETO</span>
+                </button>
+                <button onclick="location.href='equipo.html'" class="btn btn-large btn-secondary nav-link link">
+                    <span><i class="fa-solid fa-people-group"></i></i> VER EQUIPO</span>
+                </button>
+                <button onclick="location.href='index.html'" class="btn btn-large btn-contrast nav-link link">
+                    <span><i class="fa-solid fa-house"></i> VOLVER A INICIO</span>
                 </button>
 
-                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-secundary nav-link">
-                    <a class="link"> <i class="fa-regular fa-star"></i> RETO DIARIO DE FIGMA</a>
-                </button>
-
-                <button onclick="javascript:location.href='index.html'" class="btn btn-large btn-contrast nav-link">
-                    <a class="link"> <i class="fa-regular fa-arrow-left"></i> VOLVER A EMPEZAR </a>
-                </button>
             </div>
-
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="libs/jquery.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/enlaces.js"></script>
+    <script src="js/links.js"></script>
+
 
 
 </body>
-
 
 </html>
