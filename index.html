@@ -23,7 +23,7 @@
     
 </head>
 
-<body onload="loadContent('index')">
+<body>
     <div class="container">
         <div class="card page-in" id="card">
             <div class="speech">
@@ -54,6 +54,11 @@
     <!-- Scripts -->
     <script src="libs/jquery.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        $(document).ready(() => {
+            loadContent('index');
+          });
+    </script>
 </body>
 </html>
        

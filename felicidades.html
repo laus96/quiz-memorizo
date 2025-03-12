@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="loadCongrats()">
+<body>
     <div id="confetti-container"></div>
     <div class="container">
         <div class="card" id="card">
@@ -53,7 +53,11 @@
     <script src="libs/jquery.js"></script>
     <script src="js/congrats.js"></script>
 
-
+    <script>
+        $(document).ready(() => {
+            loadCongrats();
+          });
+    </script>
 
 </body>
 
