@@ -345,9 +345,11 @@ function viewTeam() {
 
 // CONFETTI
 function createConfetti() {
+function createConfetti() {
   var confetti = $('<div class="confetti"></div>');
 
-  var startPositionX = Math.random() * $(window).width();
+  var windowWidth = $(window).width();
+  var startPositionX = Math.random() * windowWidth + (Math.random() * 50 - 25); // Añade variación
   var size = Math.random() * 10 + 5;
   var colors = [
     "#ff69b4",
@@ -360,7 +362,7 @@ function createConfetti() {
   var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
   confetti.css({
-    left: startPositionX,
+    left: Math.max(0, Math.min(startPositionX, windowWidth - size)), // Evita que salga fuera de pantalla
     width: size,
     height: size,
     backgroundColor: randomColor,
@@ -372,6 +374,7 @@ function createConfetti() {
     confetti.remove();
   });
 }
+
 
 function startConfetti() {
   if (challengeEnded) {
