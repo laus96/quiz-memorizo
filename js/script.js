@@ -73,7 +73,7 @@ const questions = [
     correctAnswer: "Macarena",
   },
   {
-    questionText: "Ahora mismo, os está haciendo la Demo",
+    questionText: "¿Cómo se llama?",
     imageUrl: "assets/images/persona_3.jpg",
     options: ["Miguel", "Carlos", "Adrián"],
     correctAnswer: "Carlos",
