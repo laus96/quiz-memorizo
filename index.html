@@ -20,39 +20,40 @@
     <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
-    
+
 </head>
 
 <body>
+    <!-- INDEX -->
     <div class="container" id="container-index">
         <div class="card page-in" id="card-index">
             <div class="speech">
-                <div id="memo-speech" class="speech-bubble">
-                    <span id="memo-bubble"></span>
+                <div id="memo-speech-intro" class="speech-bubble">
+                    <span id="memo-bubble-intro"></span>
                 </div>
-                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo">
+                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo-intro">
             </div>
-            
+
             <div class="buttons">
-                <button id="btn-back" onclick="navigateMemo('back')" class="btn btn-small btn-contrast back">
+                <button id="btn-back-intro" onclick="navigateMemo('back')" class="btn btn-small btn-contrast back">
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
-                <button id="btn-next" onclick="navigateMemo('next')" class="btn btn-small btn-secondary next">
+                <button id="btn-next-intro" onclick="navigateMemo('next')" class="btn btn-small btn-secondary next">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
-                <button id="btn-empezar" onclick="location.href='test.html'" class="btn btn-medium btn-secondary next nav-link">
+                <button id="btn-start-intro" onclick="startQuiz()" class="btn btn-medium btn-secondary next nav-link">
                     <i class="fa-solid fa-gamepad"></i> EMPEZAR
                 </button>
             </div>
 
-            <button onclick="location.href='enlaces.html'" class="btn btn-large btn-contrast skip nav-link">
+            <button onclick="skipQuiz();" class="btn btn-large btn-contrast skip nav-link">
                 <i class="fa-solid fa-forward"></i> Saltar reto
             </button>
-            <button onclick="toggle()" class="btn btn-large btn-contrast skip">
-                <i class="fa-solid fa-forward"></i> toggle
-            </button>
+
         </div>
     </div>
+    <!-- INDEX -->
+    <!-- QUIZ -->
     <div class="container" id="container-quiz" style="display: none;">
         <div class="card" id="card-quiz">
             <!-- Barra de progreso -->
@@ -62,15 +63,15 @@
                     <div class="progress" id="progress"></div>
                 </div>
             </div>
-    
+
             <!-- Imagen de la pregunta -->
             <div class="question-image">
                 <img id="questionImage" alt="Imagen de la pregunta">
             </div>
-    
+
             <!-- Pregunta -->
             <h2 id="questionText" class="question-text"></h2>
-    
+
             <!-- Opciones de respuesta -->
             <div class="options">
                 <button class="option"></button>
@@ -80,34 +81,117 @@
             </div>
         </div>
 
-        <button id="felicidades" class="nav-link" style="display: none;" onclick="location.href='felicidades.html'">
+        <button id="congrats" class="nav-link" style="display: none;" onclick="endQuiz()">
             <i class="fa-solid fa-forward"></i> Saltar reto
         </button>
-    
+
     </div>
+    <!-- QUIZ -->
+    <!-- LINKS -->
+    <div class="container" id="container-links" style="display: none;">
+        <div id="confetti-container"></div>
+        <div class="card" id="card-links">
+            <div class="speech-links">
+                <div id="memo-speech-links" class="speech-bubble">
+                    <span id="memo-bubble-links"></span>
+                </div>
+                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo-links">
+            </div>
+
+            <div class="links">
+                <button id="redirectFullFigma" class="btn btn-large btn-primary link">
+                    <span><i class="fa-brands fa-figma"></i> FIGMA COMPLETO</span>
+                </button>
+                <button onclick="viewTeam()" class="btn btn-large btn-secondary nav-link link">
+                    <span><i class="fa-solid fa-people-group"></i></i> VER EQUIPO</span>
+                </button>
+                <button onclick="goHome('links')" class="btn btn-large btn-contrast nav-link link">
+                    <span><i class="fa-solid fa-house"></i> VOLVER A INICIO</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <!-- LINKS -->
+    <!-- TEAM -->
+    <div class="container" id="container-team" style="display: none;">
+        <div class="card" id="card-team">
+
+            <div class="team-container">
+                <div class="speech-team">
+                    <div class="logo-container">
+                        <img src="assets/icons/memo-base.png" class="logo-small" alt="¡Hola, soy Memo!" class="logo"
+                            id="memo-team">
+                    </div>
+                    <div id="memo_speech" class="speech-bubble-left">
+                        <span id="memo-bubble"> ¡Toca en cada tarjeta para saber más!</span>
+                    </div>
+
+                </div>
+                <!-- Miembro 1 -->
+                <div class="team-member-card" data-member="1">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_1.jpg" alt="Miembro 1" class="member-photo">
+                            <p class="member-name">Borja</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Objetivo y propuesta de valor.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="team-member-card" data-member="2">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_2.jpg" alt="Miembro 2" class="member-photo">
+                            <p class="member-name">Macarena</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Branding y diseño.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="team-member-card" data-member="3">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_3.jpg" alt="Miembro 3" class="member-photo">
+                            <p class="member-name">Carlos</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Demo de Memorizo.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 4 -->
+                <div class="team-member-card" data-member="4">
+                    <div class="inner-card">
+                        <div class="front">
+                            <img src="assets/images/persona_4.jpg" alt="Miembro 4" class="member-photo">
+                            <p class="member-name">Laura</p>
+                        </div>
+                        <div class="back-member">
+                            <p class="member-description">Sistema de diseño.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón para volver al índice -->
+            <button onclick="goLinks('team')" class="btn btn-large btn-secondary nav-link link">
+                <span><i class="fa-solid fa-arrow-left"></i> VOLVER</span>
+            </button>
+            <button onclick="goHome('team')" class="btn btn-large btn-contrast nav-link link">
+                <span><i class="fa-solid fa-house"></i> VOLVER A INICIO</span>
+            </button>
+        </div>
+    </div>
+    <!-- TEAM -->
+
     <!-- Scripts -->
     <script src="libs/jquery.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        $(document).ready(() => {
-            loadContent('index');
-          });
-          function toggle() {
-            var containerQuiz = document.getElementById('container-quiz');
-            var containerIndex = document.getElementById('container-index');
-
-            var cardQuiz = document.getElementById('card-quiz');
-            var cardIndex = document.getElementById('card-index');
-
-            containerIndex.style.display = containerIndex.style.display === 'none'? '' : 'none';
-            containerQuiz.style.display = containerQuiz.style.display === 'none'? '' : 'none';
-
-            cardIndex.classList.add('page-out');
-            cardQuiz.classList.add('page-in');
-            
-
-        }
-    </script>
 </body>
+
 </html>
-       
