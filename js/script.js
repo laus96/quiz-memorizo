@@ -109,7 +109,7 @@ function loadIntro() {
     }, 250);
 
     memoImage.removeClassExcept("logo")
-    
+
     void memoImage[0].offsetWidth;
     memoImage
       .attr("src", memoSpeaking.imageUrl)
@@ -307,7 +307,7 @@ function loadLinks() {
       memoBubble.text(memoSpeaking.text).removeClass("change");
     }, 250);
     memoImage.removeClassExcept("logo")
-    
+
     void memoImage[0].offsetWidth;
     memoImage
       .attr("src", memoSpeaking.imageUrl)
@@ -345,125 +345,126 @@ function viewTeam() {
 
 // CONFETTI
 function createConfetti() {
-function createConfetti() {
-  var confetti = $('<div class="confetti"></div>');
 
-  var windowWidth = $(window).width();
-  var startPositionX = Math.random() * windowWidth + (Math.random() * 50 - 25); // Añade variación
-  var size = Math.random() * 10 + 5;
-  var colors = [
-    "#ff69b4",
-    "#00bfff",
-    "#32cd32",
-    "#ff6347",
-    "#8a2be2",
-    "#ffd700",
-  ];
-  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    var confetti = $('<div class="confetti"></div>');
 
-  confetti.css({
-    left: Math.max(0, Math.min(startPositionX, windowWidth - size)), // Evita que salga fuera de pantalla
-    width: size,
-    height: size,
-    backgroundColor: randomColor,
-  });
+    var windowWidth = $(window).width();
+    var startPositionX = Math.random() * windowWidth + (Math.random() * 50 - 25); // Añade variación
+    var size = Math.random() * 10 + 5;
+    var colors = [
+      "#ff69b4",
+      "#00bfff",
+      "#32cd32",
+      "#ff6347",
+      "#8a2be2",
+      "#ffd700",
+    ];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-  $("#confetti-container").append(confetti);
+    confetti.css({
+      left: Math.max(0, Math.min(startPositionX, windowWidth - size)), // Evita que salga fuera de pantalla
+      width: size,
+      height: size,
+      backgroundColor: randomColor,
+    });
 
-  confetti.on("animationend", function () {
-    confetti.remove();
-  });
+    $("#confetti-container").append(confetti);
+
+    confetti.on("animationend", function () {
+      confetti.remove();
+    });
+  
 }
 
 
-function startConfetti() {
-  if (challengeEnded) {
-    if (!confetti) {
-      console.log("Iniciando confeti...");
-      confetti = setInterval(function () {
-        createConfetti();
-      }, 250);
+  function startConfetti() {
+    if (challengeEnded) {
+      if (!confetti) {
+        console.log("Iniciando confeti...");
+        confetti = setInterval(function () {
+          createConfetti();
+        }, 250);
+      }
+    } else {
+      stopConfetti();
     }
-  } else {
+  }
+  function stopConfetti() {
+    if (confetti) {
+      clearInterval(confetti);
+      confetti = null;
+    }
+    $(".confetti").remove();
+  }
+  function goHome(actualPage) {
     stopConfetti();
-  }
-}
-function stopConfetti() {
-  if (confetti) {
-    clearInterval(confetti);
-    confetti = null;
-  }
-  $(".confetti").remove();
-}
-function goHome(actualPage) {
-  stopConfetti();
-  stopInterval();
-  currentText = 0;
-  $(".flipped").removeClass("flipped");
-
-  if (actualPage.toLowerCase() == "team") {
-    const containerTeam = $("#container-team");
-    const containerIndex = $("#container-index");
-
-    const cardTeam = $("#card-team");
-    const cardIndex = $("#card-index");
-
-    containerTeam.css("display", "none");
-    containerIndex.css("display", "");
-
-    cardTeam.removeClass("page-in");
-    cardTeam.removeClass("page-out");
-
-    cardIndex.removeClass("page-in");
-    cardIndex.removeClass("page-out");
-
-    cardTeam.addClass("page-out");
-    cardIndex.addClass("page-in");
-
+    stopInterval();
     currentText = 0;
+    $(".flipped").removeClass("flipped");
 
-    loadIntro();
-  } else {
-    const containerLinks = $("#container-links");
-    const containerIndex = $("#container-index");
+    if (actualPage.toLowerCase() == "team") {
+      const containerTeam = $("#container-team");
+      const containerIndex = $("#container-index");
 
-    const cardLinks = $("#card-links");
-    const cardIndex = $("#card-index");
+      const cardTeam = $("#card-team");
+      const cardIndex = $("#card-index");
 
-    containerLinks.css("display", "none");
-    containerIndex.css("display", "");
+      containerTeam.css("display", "none");
+      containerIndex.css("display", "");
 
-    cardLinks.removeClass("page-in");
-    cardLinks.removeClass("page-out");
+      cardTeam.removeClass("page-in");
+      cardTeam.removeClass("page-out");
 
-    cardIndex.removeClass("page-in");
-    cardIndex.removeClass("page-out");
+      cardIndex.removeClass("page-in");
+      cardIndex.removeClass("page-out");
 
-    cardLinks.addClass("page-out");
-    cardIndex.addClass("page-in");
+      cardTeam.addClass("page-out");
+      cardIndex.addClass("page-in");
 
-    currentText = 0;
+      currentText = 0;
 
-    loadIntro();
+      loadIntro();
+    } else {
+      const containerLinks = $("#container-links");
+      const containerIndex = $("#container-index");
+
+      const cardLinks = $("#card-links");
+      const cardIndex = $("#card-index");
+
+      containerLinks.css("display", "none");
+      containerIndex.css("display", "");
+
+      cardLinks.removeClass("page-in");
+      cardLinks.removeClass("page-out");
+
+      cardIndex.removeClass("page-in");
+      cardIndex.removeClass("page-out");
+
+      cardLinks.addClass("page-out");
+      cardIndex.addClass("page-in");
+
+      currentText = 0;
+
+      loadIntro();
+    }
   }
-}
 
-$("#redirectFullFigma, #redirectFigmaReto").on("click", () => {
-  window.location.href =
-    "https://www.figma.com/design/Ukmyr87dnhrV4wcsDsPHFs/Memorizo?node-id=6-1419&t=zWgpAXYRgDiykEzZ-1";
-});
+  $("#redirectFullFigma, #redirectFigmaReto").on("click", () => {
+    window.location.href =
+      "https://www.figma.com/design/Ukmyr87dnhrV4wcsDsPHFs/Memorizo?node-id=6-1419&t=zWgpAXYRgDiykEzZ-1";
+  });
 
-$(document).ready(() => {
-  loadIntro();
-});
-jQuery.fn.removeClassExcept = function (val) {
-  return this.each(function () {
+  $(document).ready(() => {
+    loadIntro();
+  });
+  jQuery.fn.removeClassExcept = function (val) {
+    return this.each(function () {
       $(this).removeClass().addClass(val);
-  });
-};
+    });
+  };
 
-document.querySelectorAll(".team-member-card").forEach(card => {
-  card.addEventListener("click", function () {
+  document.querySelectorAll(".team-member-card").forEach(card => {
+    card.addEventListener("click", function () {
       this.classList.toggle("flipped");
+    });
   });
-});
