@@ -613,6 +613,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    background-color: #d6d6d6;
 }
 
 .front {
@@ -671,8 +672,8 @@ body {
     }
 
     .member-photo {
-        width: 6vh; /* Reduce aún más el tamaño de la foto */
-        height: 6vh;
+        width: 9.5vh; /* Reduce aún más el tamaño de la foto */
+        height: 9.5vh;
     }
 
     .member-name {
