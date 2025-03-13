@@ -1,8 +1,7 @@
 // VARIABLES
 let currentText = 0;
-let lastAnimation = "";
 let currentQuestionIndex = 0;
-let linksType = "";
+let challengeEnded = false;
 let interval;
 let confetti;
 
@@ -108,13 +107,15 @@ function loadIntro() {
     setTimeout(() => {
       memoBubble.text(memoSpeaking.text).removeClass("change");
     }, 250);
-    if (lastAnimation) memoImage.removeClass(lastAnimation);
-    lastAnimation = memoSpeaking.animation;
+
+    memoImage.removeClassExcept("logo")
+    
     void memoImage[0].offsetWidth;
     memoImage
       .attr("src", memoSpeaking.imageUrl)
       .addClass(memoSpeaking.animation);
   }, 100);
+
 }
 
 function navigateMemo(direction) {
@@ -125,7 +126,7 @@ function navigateMemo(direction) {
 }
 
 function skipQuiz() {
-  linksType = "skipped";
+  challengeEnded = false;
 
   const containerIndex = $("#container-index");
   const containerLinks = $("#container-links");
@@ -146,7 +147,6 @@ function skipQuiz() {
   cardLinks.addClass("page-in");
 
   currentText = 0;
-  lastAnimation = 0;
 
   loadLinks();
 
@@ -174,6 +174,7 @@ function startQuiz() {
 
   cardIndex.addClass("page-out");
   cardQuiz.addClass("page-in");
+  currentQuestionIndex = 0;
 
   loadQuestion();
 }
@@ -222,7 +223,7 @@ function loadNextQuestion() {
     loadQuestion();
   } else {
     updateProgressBar();
-    linksType = "congrats";
+    challengeEnded = true;
     setTimeout(() => goLinks("quiz"), 1000);
   }
 }
@@ -230,7 +231,8 @@ function loadNextQuestion() {
 // LINKS
 
 function goLinks(actualPage) {
-  if (actualPage == "quiz") {
+  $(".flipped").removeClass("flipped");
+  if (actualPage.toLowerCase() == "quiz") {
     const containerQuiz = $("#container-quiz");
     const containerLinks = $("#container-links");
 
@@ -269,9 +271,12 @@ function goLinks(actualPage) {
   }
 
   currentText = 0;
-  lastAnimation = 0;
+
+  stopInterval();
 
   loadLinks();
+  if (challengeEnded) startConfetti();
+  else stopConfetti();
 
   interval = setInterval(() => {
     loadLinks();
@@ -283,16 +288,13 @@ function loadLinks() {
   let memoImage = $("#memo-links");
   let memoSpeaking;
 
-  if (linksType == "congrats") {
-    startConfetti();
-
+  if (challengeEnded) {
     if (currentText > memoSpeaksCongrats.length - 1) currentText = 0;
 
     memoSpeaking = memoSpeaksCongrats[currentText];
 
     currentText++;
   } else {
-    stopConfetti();
     if (currentText > memoSpeaksLinks.length - 1) currentText = 0;
 
     memoSpeaking = memoSpeaksLinks[currentText];
@@ -304,8 +306,8 @@ function loadLinks() {
     setTimeout(() => {
       memoBubble.text(memoSpeaking.text).removeClass("change");
     }, 250);
-    if (lastAnimation) memoImage.removeClass(lastAnimation);
-    lastAnimation = memoSpeaking.animation;
+    memoImage.removeClassExcept("logo")
+    
     void memoImage[0].offsetWidth;
     memoImage
       .attr("src", memoSpeaking.imageUrl)
@@ -372,23 +374,31 @@ function createConfetti() {
 }
 
 function startConfetti() {
-  if (linksType == "congtrats") {
+  if (challengeEnded) {
     if (!confetti) {
-      // Evita múltiples intervalos activos
+      console.log("Iniciando confeti...");
       confetti = setInterval(function () {
         createConfetti();
       }, 250);
     }
+  } else {
+    stopConfetti();
   }
 }
-
 function stopConfetti() {
-  clearInterval(confetti);
-  confetti = null;
+  if (confetti) {
+    clearInterval(confetti);
+    confetti = null;
+  }
+  $(".confetti").remove();
 }
-
 function goHome(actualPage) {
-  if (actualPage == "team") {
+  stopConfetti();
+  stopInterval();
+  currentText = 0;
+  $(".flipped").removeClass("flipped");
+
+  if (actualPage.toLowerCase() == "team") {
     const containerTeam = $("#container-team");
     const containerIndex = $("#container-index");
 
@@ -408,7 +418,7 @@ function goHome(actualPage) {
     cardIndex.addClass("page-in");
 
     currentText = 0;
-    lastAnimation = 0;
+
     loadIntro();
   } else {
     const containerLinks = $("#container-links");
@@ -430,7 +440,7 @@ function goHome(actualPage) {
     cardIndex.addClass("page-in");
 
     currentText = 0;
-    lastAnimation = 0;
+
     loadIntro();
   }
 }
@@ -442,4 +452,15 @@ $("#redirectFullFigma, #redirectFigmaReto").on("click", () => {
 
 $(document).ready(() => {
   loadIntro();
+});
+jQuery.fn.removeClassExcept = function (val) {
+  return this.each(function () {
+      $(this).removeClass().addClass(val);
+  });
+};
+
+document.querySelectorAll(".team-member-card").forEach(card => {
+  card.addEventListener("click", function () {
+      this.classList.toggle("flipped");
+  });
 });
