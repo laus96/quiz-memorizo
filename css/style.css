@@ -429,6 +429,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .option:hover {
+        background-color: initial;
+        cursor: initial;
+    }
     .question-image {
         width: 40vw;  /* Un poco más grande en móviles */
         height: 40vw; 
