@@ -125,6 +125,8 @@ function navigateMemo(direction) {
 }
 
 function skipQuiz() {
+  linksType = "skipped";
+
   const containerIndex = $("#container-index");
   const containerLinks = $("#container-links");
 
@@ -145,8 +147,6 @@ function skipQuiz() {
 
   currentText = 0;
   lastAnimation = 0;
-
-  linksType = "skipped";
 
   loadLinks();
 
@@ -372,11 +372,13 @@ function createConfetti() {
 }
 
 function startConfetti() {
-  if (!confetti) {
-    // Evita múltiples intervalos activos
-    confetti = setInterval(function () {
-      createConfetti();
-    }, 250);
+  if (linksType == "congtrats") {
+    if (!confetti) {
+      // Evita múltiples intervalos activos
+      confetti = setInterval(function () {
+        createConfetti();
+      }, 250);
+    }
   }
 }
 
