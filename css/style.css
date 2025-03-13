@@ -673,8 +673,8 @@ body {
     }
 
     .member-photo {
-        width: 9.5vh; /* Reduce aún más el tamaño de la foto */
-        height: 9.5vh;
+        width: 7.5vh; /* Reduce aún más el tamaño de la foto */
+        height: 7.5vh;
     }
 
     .member-name {
