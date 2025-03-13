@@ -374,7 +374,6 @@ body {
     border-radius: 15px;
     object-fit: cover;
     display: block;
-    margin-bottom: 3vh; 
 }
 
 .question-image img {
@@ -383,7 +382,7 @@ body {
     border-radius: 15px;
     object-fit: cover;
     display: block;
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
 }
 
 .question-text {
@@ -457,6 +456,7 @@ body {
     .option {
         padding: 0 10px; 
         font-size: 15px; 
+        heighth: 40px;
     }
 
     .progress-bar {
