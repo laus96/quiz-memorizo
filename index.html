@@ -44,11 +44,12 @@
                 <button id="btn-start-intro" onclick="startQuiz()" class="btn btn-medium btn-secondary next nav-link">
                     <i class="fa-solid fa-gamepad"></i> EMPEZAR
                 </button>
+                <button onclick="skipQuiz();" class="btn btn-large btn-contrast skip nav-link">
+                    <i class="fa-solid fa-forward"></i> Saltar reto
+                </button>
             </div>
 
-            <button onclick="skipQuiz();" class="btn btn-large btn-contrast skip nav-link">
-                <i class="fa-solid fa-forward"></i> Saltar reto
-            </button>
+           
 
         </div>
     </div>
@@ -91,7 +92,7 @@
     <div class="container" id="container-links" style="display: none;">
         <div id="confetti-container"></div>
         <div class="card" id="card-links">
-            <div class="speech-links">
+            <div class="speech">
                 <div id="memo-speech-links" class="speech-bubble">
                     <span id="memo-bubble-links"></span>
                 </div>
@@ -115,9 +116,9 @@
     <!-- LINKS -->
     <!-- TEAM -->
     <div class="container" id="container-team" style="display: none;">
-        <div class="card" id="card-team">
+        <div class="card-team" id="card-team">
 
-            <div class="team-container">
+            <div class="memo-container">
                 <div class="speech-team">
                     <div class="logo-container">
                         <img src="assets/icons/memo-base.png" class="logo-small" alt="¡Hola, soy Memo!" class="logo"
@@ -128,61 +129,64 @@
                     </div>
 
                 </div>
-                <!-- Miembro 1 -->
-                <div class="team-member-card" data-member="1">
-                    <div class="inner-card">
-                        <div class="front">
-                            <img src="assets/images/persona_1.jpg" alt="Miembro 1" class="member-photo">
-                            <p class="member-name">Borja</p>
-                        </div>
-                        <div class="back-member">
-                            <p class="member-description">Objetivo y propuesta de valor.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Miembro 2 -->
-                <div class="team-member-card" data-member="2">
-                    <div class="inner-card">
-                        <div class="front">
-                            <img src="assets/images/persona_2.jpg" alt="Miembro 2" class="member-photo">
-                            <p class="member-name">Macarena</p>
-                        </div>
-                        <div class="back-member">
-                            <p class="member-description">Branding y diseño.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Miembro 3 -->
-                <div class="team-member-card" data-member="3">
-                    <div class="inner-card">
-                        <div class="front">
-                            <img src="assets/images/persona_3.jpg" alt="Miembro 3" class="member-photo">
-                            <p class="member-name">Carlos</p>
-                        </div>
-                        <div class="back-member">
-                            <p class="member-description">Demo de Memorizo.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Miembro 4 -->
-                <div class="team-member-card" data-member="4">
-                    <div class="inner-card">
-                        <div class="front">
-                            <img src="assets/images/persona_4.jpg" alt="Miembro 4" class="member-photo">
-                            <p class="member-name">Laura</p>
-                        </div>
-                        <div class="back-member">
-                            <p class="member-description">Sistema de diseño.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
+                <div class="team-container">
+                <!-- Miembro 1 -->
+                    <div class="team-member-card" data-member="1">
+                        <div class="inner-card">
+                            <div class="front">
+                                <img src="assets/images/persona_1.jpg" alt="Miembro 1" class="member-photo">
+                                <p class="member-name">Borja <br/>Perea</p>
+                            </div>
+                            <div class="back-member">
+                                <p class="member-description">Objetivo y propuesta de valor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Miembro 2 -->
+                    <div class="team-member-card" data-member="2">
+                        <div class="inner-card">
+                            <div class="front">
+                                <img src="assets/images/persona_2.jpg" alt="Miembro 2" class="member-photo">
+                                <p class="member-name">Macarena Goytre</p>
+                            </div>
+                            <div class="back-member">
+                                <p class="member-description">Branding y diseño.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Miembro 3 -->
+                    <div class="team-member-card" data-member="3">
+                        <div class="inner-card">
+                            <div class="front">
+                                <img src="assets/images/persona_3.jpg" alt="Miembro 3" class="member-photo">
+                                <p class="member-name">Carlos Miguel Fuentes</p>
+                            </div>
+                            <div class="back-member">
+                                <p class="member-description">Demo de Memorizo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Miembro 4 -->
+                    <div class="team-member-card" data-member="4">
+                        <div class="inner-card">
+                            <div class="front">
+                                <img src="assets/images/persona_4.jpg" alt="Miembro 4" class="member-photo">
+                                <p class="member-name">Laura <br/>Saro</p>
+                            </div>
+                            <div class="back-member">
+                                <p class="member-description">Sistema de diseño.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="goLinks('team')" class="btn btn-large btn-contrast nav-link skip">
+                        <span><i class="fa-solid fa-arrow-left"></i> VOLVER</span>
+                    </button>
+            </div>
             <!-- Botón para volver al índice -->
-            <button onclick="goLinks('team')" class="btn btn-large btn-contrast nav-link">
-                <span><i class="fa-solid fa-arrow-left"></i> VOLVER</span>
-            </button>
            
+
         </div>
     </div>
     <!-- TEAM -->

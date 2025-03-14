@@ -37,7 +37,10 @@
 
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-dark: rgba(0, 0, 0, 0.3);
-    --shadow-brand: 5px 5px var(--primary-highlight);
+    --shadow-brand: 2px 2px var(--primary-highlight);
+    --shadow-secondary: 2px 2px var(--secondary-highlight);
+    --shadow-contrast: 2px 2px var(--border-dark);
+
 
     --font-family-primary: 'Montserrat', sans-serif;
     --font-family-secondary: 'Arial', sans-serif;
@@ -108,7 +111,25 @@ body {
     background-image: url('../assets/backgrounds/grey_background.png');
     position: relative;
     overflow: hidden;
-    
+
+}
+
+.card-team {
+    width: 90vw;
+    max-width: 400px;
+    height: 80vh;
+    max-height: 700px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow_dark);
+    text-align: center;
+    padding: clamp(15px, 3vw, 25px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../assets/backgrounds/grey_background.png');
+    position: relative;
+    overflow: hidden;
+
 }
 
 /* ========================== /
@@ -144,7 +165,7 @@ body {
     height: auto;
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 40%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
@@ -215,12 +236,13 @@ body {
 .buttons {
     display: flex;
     justify-content: space-between;
-    gap: 5vw;
+    gap: 15vw;
     position: absolute;
-    bottom: 18vh;
+    bottom: 10vh;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
+    height: 250px;
 }
 
 .btn {
@@ -294,7 +316,8 @@ body {
     font-size: var(--font-size-small);
 }
 
-.back, .next {
+.back,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -315,7 +338,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     position: absolute;
-    bottom: 3vh;
+    bottom: 1.5vh;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -329,23 +352,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1vh; 
-    margin-top: 3.5vh; 
+    margin-bottom: 1vh;
+    margin-top: 3.5vh;
 }
 
 .question-number {
-    font-size: 20px; 
+    font-size: 20px;
     font-weight: bold;
     color: var(--secondary-color);
-    
+
 }
 
 .progress-bar {
     width: 80%;
-    height: 1vh; 
+    height: 1vh;
     background: #ddd;
     border-radius: 5px;
-    margin: 2vh auto; 
+    margin: 2vh auto;
     overflow: hidden;
 }
 
@@ -361,18 +384,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centrar verticalmente */
+    justify-content: center;
     gap: 5vh;
     width: 100%;
-    padding: 0; /* Eliminar padding superior que lo desbalancea */
+    padding: 0;
 }
 
 .question-image {
-    width: 30vw; 
-    height: 30vw; 
+    width: 30vw;
+    height: 30vw;
     margin: auto;
-    max-width: 200px; 
-    max-height: 200px; 
+    max-width: 200px;
+    max-height: 200px;
     border-radius: 15px;
     object-fit: cover;
     display: flex;
@@ -395,15 +418,15 @@ body {
     font-weight: bold;
     color: var(--text-dark);
     text-align: center;
-    margin-bottom: 3vh; 
+    margin-bottom: 3vh;
 }
 
 .options {
     display: flex;
     flex-direction: column;
-    gap: 4vh; 
+    gap: 4vh;
     width: 100%;
-    margin-bottom: 5vh; 
+    margin-bottom: 5vh;
 }
 
 .option {
@@ -434,12 +457,14 @@ body {
         background-color: initial;
         cursor: initial;
     }
+    
+
     .question-image {
-        width: 40vw;  /* Un poco más grande en móviles */
-        height: 40vw; 
-        max-width: 200px; /* Permitir más tamaño */
+        width: 40vw;
+        height: 40vw;
+        max-width: 200px;
         max-height: 200px;
-        min-width: 180px; /* Evitar que sea demasiado pequeña */
+        min-width: 180px;
         min-height: 180px;
     }
 
@@ -450,16 +475,16 @@ body {
     }
 
     .question-number {
-        font-size: 18px; /* Un poco más grande para mejor lectura */
+        font-size: 18px;
     }
 
     .question-text {
-        font-size: 17px; /* Un poco más grande */
+        font-size: 17px;
     }
 
     .option {
-        padding: 0 12px;  
-        font-size: 16px; 
+        padding: 0 12px;
+        font-size: 16px;
         height: 45px;
     }
 
@@ -468,16 +493,16 @@ body {
     }
 
     .progress {
-        height: 1.5vh; /* Un poco más gruesa */
+        height: 1.5vh;
     }
 
     .options {
-        gap: 4vh; 
-        margin-bottom: 6vh; 
+        gap: 4vh;
+        margin-bottom: 6vh;
     }
 
     .question-container {
-        padding-top: 8vh; /* Reducimos para que la imagen tenga más espacio */
+        padding-top: 8vh;
     }
 }
 
@@ -500,9 +525,11 @@ body {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.2);
     }
+
     100% {
         transform: scale(1);
     }
@@ -512,16 +539,6 @@ body {
 /* 🔗 LINKS  🔗*/
 /* ========================== */
 
-.speech-links {
-    width: 80vw; 
-    max-width: 250px; 
-    height: auto;
-    position: absolute;
-    left: 50%;
-    top: 35%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
 
 .links {
     height: auto;
@@ -529,10 +546,10 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     display: block;
-    bottom: 2vh; 
+    bottom: 6vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; 
+    width: 80%;
 }
 
 .link {
@@ -546,7 +563,7 @@ body {
 .speech-team {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .logo-container {
@@ -554,31 +571,37 @@ body {
     justify-content: center;
 }
 
+.memo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2vh;
+    max-height: 150px;
+}
+
+
 .team-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas pasen a nuevas filas */
-    justify-content: center; /* Centra las tarjetas */
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 10px; /* Espaciado entre tarjetas */
-    width: 100%;
-    max-width: 500px; /* Ajusta según necesidad */
-    margin: 20px 0; /* Espaciado superior e inferior del contenedor */
-    max-height: 450px; /* Limita el máximo de altura del contenedor */
-    padding-bottom: 10px; /* Espaciado inferior */
+    gap: 20px;
+    width: 95%;
+    max-width: 600px;
+    max-height: 500px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .team-member-card {
-    width: calc(50% - 10px); /* Dos tarjetas por fila siempre */
-    max-width: 180px; /* Limita el tamaño en pantallas grandes */
-    height: 120px; /* Se reduce la altura de las tarjetas */
+    width: calc(50% - 20px);
+    max-width: 220px;
+    height: 200px;
     perspective: 1000px;
     cursor: pointer;
-    margin: 10px 0; /* Espaciado superior e inferior para cada tarjeta */
-}
+    transition: transform 0.3s ease-in-out;
 
-.team-member-memo {
-    max-width: 250px;
-    height: 150px;
 }
 
 .inner-card {
@@ -587,20 +610,17 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
-}
 
-.team-member-card .inner-card {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
 }
 
 .team-member-card.flipped .inner-card {
     transform: rotateY(180deg);
 }
 
-.front, .back-member {
+.front,
+.back-member {
     width: 100%;
-    height: 120px; /* Ajustada para que encaje con la nueva altura de las tarjetas */
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -610,81 +630,77 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    background-color: #d6d6d6;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
 }
 
 .front {
-    background: #d6d6d6;
+    background-color: #f5f5f5;
+    box-shadow: var(--shadow-contrast);
 }
 
 .back-member {
-    background: var(--secondary-color);
-    border: 2px solid var(--secondary-highlight);
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow-secondary);
     color: var(--text-light);
     transform: rotateY(180deg);
 }
 
 .member-photo {
-    width: 8vh; /* Se reduce el tamaño de la foto */
-    height: 8vh;
-    border-radius: 50%;
+    width: 12vh;
+    height: 13vh;
+    border-radius: 15%;
     object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .member-name {
-    font-size: 1em; /* Se reduce el tamaño del nombre */
+    font-size: 14px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 15px;
+    color: #333;
 }
 
 .member-description {
-    font-size: 0.9em; /* Se reduce el tamaño de la descripción */
-    padding: 10px;
+    font-size: 0.95em;
+    padding: 10px 0;
+    color: var(--text-light);
 }
 
-.flip-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1em; /* Se reduce el tamaño del icono */
-    color: #666;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
 
 .team-member-card:hover .flip-icon,
 .team-member-card:active .flip-icon {
     opacity: 1;
+    transform: scale(1.2);
 }
 
-/* Responsivo para pantallas pequeñas */
 @media (max-width: 600px) {
-    .team-member-card {
-        width: calc(50% - 10px); /* Mantiene dos tarjetas por fila */
-        max-width: none; /* Permite que usen todo el ancho disponible */
-        height: 100px; /* Reduce aún más la altura de las tarjetas en pantallas pequeñas */
+    .team-member-card {    
+        height: 220px;
     }
 
-    .front, .back-member {
-        height: 100px; /* Ajuste de altura para que coincida con la nueva altura de la tarjeta */
+    .front,
+    .back-member {
+        height: 100%;
     }
 
     .member-photo {
-        width: 7.5vh; /* Reduce aún más el tamaño de la foto */
-        height: 7.5vh;
+        width: 10vh;
+        height: 9vh;
     }
 
     .member-name {
-        font-size: 0.9em; /* Ajuste de tamaño para pantallas pequeñas */
+        font-size: 16px;
     }
 
     .member-description {
-        font-size: 0.8em; /* Ajuste de tamaño para pantallas pequeñas */
+        font-size: 0.85em;
     }
 }
+
 
 /* ========================== */
 /* 🎬 ANIMATION 🎬*/
@@ -702,17 +718,18 @@ body {
     animation: flipOut 0.5s forwards;
 }
 
-.flip-out { 
+.flip-out {
     animation: flipOut 0.5s ease-out;
 }
 
 @keyframes flipOut {
     from {
-        transform: rotateY(0deg); 
+        transform: rotateY(0deg);
         opacity: 1;
     }
+
     to {
-        transform: rotateY(-90deg); 
+        transform: rotateY(-90deg);
         opacity: 0;
     }
 }
@@ -723,11 +740,12 @@ body {
 
 @keyframes flipIn {
     from {
-        transform: rotateY(90deg); 
+        transform: rotateY(90deg);
         opacity: 0;
     }
+
     to {
-        transform: rotateY(0deg); 
+        transform: rotateY(0deg);
         opacity: 1;
     }
 }
@@ -737,6 +755,7 @@ body {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -748,6 +767,7 @@ body {
         opacity: 1;
         transform: scale(1);
     }
+
     to {
         opacity: 0;
         transform: scale(0.9);
@@ -763,7 +783,9 @@ body {
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
 
@@ -791,7 +813,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 9999; 
+    z-index: 9999;
 }
 
 .confetti {
@@ -808,6 +830,7 @@ body {
         opacity: 1;
         transform: rotate(0deg);
     }
+
     100% {
         top: 70vh;
         opacity: 0;
