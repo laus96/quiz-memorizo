@@ -595,9 +595,9 @@ body {
 }
 
 .team-member-card {
-    width: calc(50% - 20px);
+    width: calc(50% - 10px);
     max-width: 220px;
-    height: 200px;
+    height: 20vh;
     perspective: 1000px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -670,6 +670,24 @@ body {
     color: var(--text-light);
 }
 
+.member-title {
+    font-size: 1.2em;
+    padding: 10px 0;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.team-links {
+    height: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: block;
+    bottom: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
 
 .team-member-card:hover .flip-icon,
 .team-member-card:active .flip-icon {
@@ -679,7 +697,7 @@ body {
 
 @media (max-width: 600px) {
     .team-member-card {    
-        height: 220px;
+        height: 20vh;
     }
 
     .front,
