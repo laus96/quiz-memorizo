@@ -119,10 +119,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;  /* Espaciado entre los elementos */
+    gap: 10px;  
 }
-
-
 
 .card-content {
     flex-grow: 1;
@@ -151,10 +149,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* Organiza los elementos en una columna */
     align-items: center;
     gap: 40px;
-    /* Espacio entre las filas de botones */
     padding: 10px;
 }
 
@@ -172,11 +168,8 @@ body {
 
 .logo {
     max-width: 100%;
-    /* Asegura que el logo nunca exceda el 100% del contenedor */
     height: auto;
-    /* Mantiene la proporción del logo */
     max-height: 220px;
-    /* Limita la altura máxima del logo */
     margin-bottom: 20px;
 }
 
@@ -209,7 +202,6 @@ body {
     margin-bottom: 30px;
     box-shadow: var(--shadow-brand);
     max-width: 80%;
-    /* Limita el ancho máximo de la burbuja */
 }
 
 .card-content .speech-bubble,
@@ -345,35 +337,27 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 1.5vh 0;
-    /* Reduce el margen superior e inferior */
     padding: 0 10px;
-    /* Espaciado interno para evitar que los elementos lleguen al borde */
 }
 
 .question-number {
     font-size: 18px;
-    /* Tamaño de fuente reducido para que se ajuste mejor en el header */
     font-weight: bold;
     color: var(--secondary-color);
     margin-bottom: 0.5vh;
-    /* Menos espacio debajo del número de pregunta */
 }
 
 .progress-bar {
     width: 100%;
-    /* Aumenta el ancho para que se ajuste completamente al contenedor */
     height: 1.2vh;
-    /* Aumenta ligeramente la altura para hacerla más visible */
     background: #ddd;
     border-radius: 5px;
     margin-top: 1vh;
-    /* Menos espacio superior */
     overflow: hidden;
 }
 
 .progress {
     width: 10%;
-    /* Esto debería actualizarse dinámicamente con el progreso */
     height: 100%;
     background-color: var(--secondary-color);
     transition: width 0.3s ease-in-out;
@@ -385,17 +369,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* Ajusta la alineación para que los elementos estén hacia arriba */
     gap: 5vh;
-    /* Espaciado entre los elementos */
     width: 100%;
     padding: 0 15px;
-    /* Espaciado interno para asegurar que no toque los bordes */
     box-sizing: border-box;
-    /* Asegura que el padding no afecte el ancho total */
 }
 
-/* Imagen de la pregunta */
 .question-image {
     width: 30vw;
     height: 30vw;
@@ -484,7 +463,6 @@ body {
     width: 100%;
 }
 
-/* Estilo de cada tarjeta */
 .team-member-card {
     width: calc(50% - 10px);
     height: 180px;
@@ -492,7 +470,6 @@ body {
     cursor: pointer;
 }
 
-/* Estructura interna para el giro */
 .inner-card {
     width: 100%;
     height: 100%;
@@ -501,7 +478,6 @@ body {
     transition: transform 0.6s;
 }
 
-/* Frente y dorso de la tarjeta */
 .front,
 .back {
     width: 100%;
@@ -521,7 +497,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Frente: fondo con imagen */
 .front {
     background-size: cover;
     background-position: center;
@@ -532,7 +507,6 @@ body {
     justify-content: end;
 }
 
-/* Dorso: información */
 .back {
     background-color: var(--secondary-color);
     box-shadow: var(--shadow-secondary);
@@ -541,7 +515,6 @@ body {
     justify-content: center;
 }
 
-/* Texto dentro de la tarjeta */
 .card-text {
     color: white;
     font-size: 1em;
@@ -560,7 +533,6 @@ body {
     margin-top: 10px;
 }
 
-/* Efecto de giro al hacer click */
 .team-member-card.flipped .inner-card {
     transform: rotateY(180deg);
 }
@@ -568,45 +540,40 @@ body {
 /* ℹ️ INFO MODAL ℹ️*/
 /* ========================== */
 
-/* Estilo del fondo del modal */
-/* Fondo del modal */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo suave */
+    background-color: rgba(0, 0, 0, 0.4); 
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 9999; /* Aseguramos que el modal se quede por encima de otros elementos */
+    z-index: 9999; 
 }
 
-/* Modal activo */
 .modal.active {
     opacity: 1;
     pointer-events: all;
 }
 
-/* Estilo del contenido del modal */
 .modal-content {
     background-color: #fff;
-    border-radius: 12px; /* Bordes redondeados */
+    border-radius: 12px; 
     width: 90%;
     max-width: 700px;
     padding: 25px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); 
     overflow-y: auto;
     max-height: 80vh;
     overflow-x: hidden;
     transition: transform 0.3s ease-out;
 }
 
-/* Header del modal */
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -622,14 +589,12 @@ body {
     margin: 0;
 }
 
-/* Cuerpo del modal */
 .modal-body {
     font-size: 1.1em;
     color: var(--text-dark);
     line-height: 1.6;
 }
 
-/* Pie de modal con botones */
 .modal-footer {
     display: flex;
     justify-content: flex-end;
@@ -637,7 +602,6 @@ body {
     margin-top: 25px;
 }
 
-/* Estilo de botones */
 .modal-footer .btn {
     padding: 12px 20px;
     font-size: 1.1em;
@@ -648,56 +612,50 @@ body {
     min-width: 120px;
 }
 
-/* Contenedor de los enlaces sociales */
 .social-links {
     display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten en filas */
-    gap: 20px; /* Espaciado entre los elementos */
+    flex-wrap: wrap; 
+    gap: 20px;
     padding: 10px;
     margin-top: 20px;
     max-height: 300px;
-    justify-content: center; /* Alineación centrada */
+    justify-content: center; 
 }
 
-/* Cada enlace */
 .social-link {
     display: flex;
-    flex-direction: row; /* Íconos y texto alineados horizontalmente */
+    flex-direction: row; 
     align-items: center;
     text-decoration: none;
-    gap: 8px; /* Reducir espacio entre el ícono y el texto */
+    gap: 8px; 
     padding: 8px 16px;
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    width: calc(50% - 10px); /* Hacer cada enlace ocupar el 50% del ancho */
+    width: calc(50% - 10px); 
     margin: 6px 0;
 }
 
-/* Hover effect para cada enlace */
 .social-link:hover {
     transform: scale(1.05);
-    background-color: var(--secondary-color); /* Fondo LinkedIn en hover */
+    background-color: var(--secondary-color); 
     color: var(--text-light);
 }
 
-/* Ícono de LinkedIn */
 .social-link .circle {
-    font-size: 1.3em;  /* Reducir tamaño del ícono */
+    font-size: 1.3em;  
     color: var(--text-dark);
 }
 
-/* Texto dentro de cada enlace */
 .social-link .text {
-    font-size: 0.95em; /* Reducir el tamaño del nombre */
+    font-size: 0.95em; 
     font-weight: 600;
     color: var(--text-dark);
 }
 
-/* Descripción de cada enlace */
 .social-link .description {
-    font-size: 0.7em; /* Reducir el tamaño de la descripción */
+    font-size: 0.7em; 
     color: #555;
     margin-top: 4px;
     display: block;
@@ -722,7 +680,7 @@ body {
     width: 10px;
     height: 10px;
     background-color: #ff69b4;
-    border-radius: 50%; /* Hacerlo más parecido a confeti real */
+    border-radius: 50%; 
     opacity: 0.8;
     animation: fall linear infinite;
 }
@@ -848,6 +806,7 @@ body {
         transform: rotate(360deg);
     }
 }
+
 /* 📱 MEDIA RESPONSIVE 📱 */
 /* ========================== */
 
@@ -863,19 +822,17 @@ body {
     }
 
     .btn {
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 17px;
+        font-weight: 590;
 
     }
 
     .question-number {
-        font-size: 15px;
-        /* Tamaño de fuente más pequeño en pantallas pequeñas */
+        font-size: 16px;
     }
 
     .progress-bar {
         height: 1vh;
-        /* Reducir la altura de la barra en pantallas pequeñas */
     }
 
     .option:hover {
@@ -884,26 +841,23 @@ body {
     }
 
     .question-image {
-        width: 45vw;
-        height: 45vw;
-        max-width: 150px;
-        max-height: 150px;
+        width: 65vw;
+        height: 65vw;
+        max-width: 180px;
+        max-height: 180px;
     }
 
-    /* Reducir tamaño del texto de la pregunta en pantallas medianas */
     .question-text {
-        font-size: 15px;
+        font-size: 18px;
     }
 
-    /* Ajustes para las opciones */
     .option {
-        font-size: 14px;
-        /* Reducir el tamaño de las opciones en pantallas más pequeñas */
+        font-size: 17px;
     }
 
     .card-team-content .team-member-card {
         width: calc(50% - 10px);
-        height: 150px;
+        height: 170px;
        
     }
     .modal-content {
@@ -924,7 +878,7 @@ body {
     }
 
     .social-link {
-        width: calc(50% - 10px); /* Mantener 2 enlaces por fila en pantallas pequeñas */
+        width: calc(50% - 10px); 
     }
 
     .social-link .text {
@@ -946,23 +900,20 @@ body {
         font-size: 14px;
         padding: 6px 10px;
         max-width: 90%;
-        background-color: #176544 !important;
     }
 
     .btn {
-        font-size: 15px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 590;
 
     }
 
     .question-number {
-        font-size: 14px;
-        /* Aún más pequeño para pantallas muy pequeñas */
+        font-size: 16px;
     }
 
     .progress-bar {
         height: 0.8vh;
-        /* Reducir la altura de la barra aún más en pantallas pequeñas */
     }
 
     .option:hover {
@@ -973,24 +924,21 @@ body {
     .question-image {
         width: 60vw;
         height: 60vw;
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 180px;
+        max-height: 180px;
     }
 
-    /* Reducir aún más el tamaño del texto de la pregunta */
     .question-text {
-        font-size: 14px;
+        font-size: 18px;
     }
 
-    /* Ajustes para las opciones */
     .option {
-        font-size: 14px;
-        /* Reducir aún más el tamaño de las opciones */
+        font-size: 17px;
     }
 
     .card-team-content .team-member-card {
         width: calc(50% - 10px);
-        height: 120px;
+        height: 170px;
 
     }
 }
