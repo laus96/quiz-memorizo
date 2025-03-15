@@ -31,25 +31,25 @@
                 <p class="text">¡Comienza el Reto de Memorizo!</p>
             </div>
             <div class="card-content">
-                <div id="memo-speech-intro" class="speech-bubble">
-                    <span id="memo-bubble-intro"></span>
+                <div id="memo-speech-index" class="speech-bubble">
+                    <span id="memo-bubble-index"></span>
                 </div>
-                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo-intro">
+                <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo" id="memo-index">
             </div>
             <div class="card-footer">
                 <div class="btn-row">
-                    <button id="btn-back-intro" onclick="navigateMemo('back')" class="btn btn-small btn-contrast">
+                    <button id="btn-back-index" onclick="navigateText('back')" class="btn btn-small btn-contrast">
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
-                    <button id="btn-next-intro" onclick="navigateMemo('next')" class="btn btn-small btn-secondary">
+                    <button id="btn-next-index" onclick="navigateText('next')" class="btn btn-small btn-secondary">
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
-                    <button id="btn-start-intro" onclick="startQuiz()" class="btn btn-medium btn-secondary">
+                    <button id="btn-start-index" onclick="startQuiz()" class="btn btn-medium btn-secondary">
                         <span><i class="fa-solid fa-gamepad"></i> Empezar</span>
                     </button>
                 </div>
 
-                <button onclick="skipQuiz();" class="btn btn-large btn-contrast">
+                <button onclick="goLinks('index');" class="btn btn-large btn-contrast">
                     <span><i class="fa-solid fa-forward"></i> Saltar reto</span>
                 </button>
             </div>
@@ -266,7 +266,7 @@
     </div>
     <div class="card-footer">
         <div class="btn-row">
-            <button id="btn-back-intro" onclick="goLinks('team')" class="btn btn-small btn-contrast">
+            <button id="btn-back-team" onclick="goLinks('team')" class="btn btn-small btn-contrast">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
             <button id="btn-open-modal-linkedin" class="btn btn-small btn-primary">
@@ -281,6 +281,8 @@
     <!-- Scripts -->
     <script src="libs/jquery.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
 </body>
 
 </html>

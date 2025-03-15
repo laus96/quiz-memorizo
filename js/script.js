@@ -102,11 +102,11 @@ const questions = [
 // INTRO
 
 function loadIntro() {
-  const memoBubble = $("#memo-bubble-intro");
-  const memoImage = $("#memo-intro");
-  const btnBack = $("#btn-back-intro");
-  const btnNext = $("#btn-next-intro");
-  const btnEmpezar = $("#btn-start-intro");
+  const memoBubble = $("#memo-bubble-index");
+  const memoImage = $("#memo-index");
+  const btnBack = $("#btn-back-index");
+  const btnNext = $("#btn-next-index");
+  const btnEmpezar = $("#btn-start-index");
   const memoSpeaking = memoSpeaksIntro[currentText];
 
   btnBack
@@ -130,7 +130,7 @@ function loadIntro() {
   }, 100);
 }
 
-function navigateMemo(direction) {
+function navigateText(direction) {
   if (direction === "next" && currentText < memoSpeaksIntro.length - 1)
     currentText++;
   if (direction === "back" && currentText > 0) currentText--;
@@ -244,6 +244,62 @@ function loadNextQuestion() {
 
 function goLinks(actualPage) {
   $(".flipped").removeClass("flipped");
+  const containerLinks = $("#container-links");
+  const cardLinks = $("#card-links");
+
+  switch (actualPage) {
+    case "index":
+      const containerIndex = $("#container-index");
+      const cardIndex = $("#card-index");
+
+      containerIndex.css("display", "none");
+      containerLinks.css("display", "");
+
+      cardIndex.removeClass("page-in");
+      cardIndex.removeClass("page-out");
+
+      cardLinks.removeClass("page-in");
+      cardLinks.removeClass("page-out");
+
+      cardIndex.addClass("page-out");
+      cardLinks.addClass("page-in");
+      break;
+    case "quiz":
+      const containerQuiz = $("#container-quiz");
+
+      const cardQuiz = $("#card-quiz");
+
+      containerQuiz.css("display", "none");
+      containerLinks.css("display", "");
+
+      cardQuiz.removeClass("page-in");
+      cardQuiz.removeClass("page-out");
+
+      cardLinks.removeClass("page-in");
+      cardLinks.removeClass("page-out");
+
+      cardQuiz.addClass("page-out");
+      cardLinks.addClass("page-in");
+      break;
+    case "team":
+      const containerTeam = $("#container-team");
+
+      const cardTeam = $("#card-team");
+
+      containerTeam.css("display", "none");
+      containerLinks.css("display", "");
+
+      cardTeam.removeClass("page-in");
+      cardTeam.removeClass("page-out");
+
+      cardLinks.removeClass("page-in");
+      cardLinks.removeClass("page-out");
+
+      cardTeam.addClass("page-out");
+      cardLinks.addClass("page-in");
+      break;
+  }
+
   if (actualPage.toLowerCase() == "quiz") {
     const containerQuiz = $("#container-quiz");
     const containerLinks = $("#container-links");
@@ -295,7 +351,7 @@ function goLinks(actualPage) {
   }, 4500);
 }
 
-function loadLinks() {
+function loadLinks(from) {
   let memoBubble = $("#memo-bubble-links");
   let memoImage = $("#memo-links");
   let memoSpeaking;
@@ -394,28 +450,36 @@ function loadTeam() {
 
 // CONFETTI
 function createConfetti() {
-  for (let i = 0; i < 3; i++) { // Solo 3 confetis por llamada
-      let confetti = document.createElement("div");
-      confetti.classList.add("confetti");
+  for (let i = 0; i < 3; i++) {
+    // Solo 3 confetis por llamada
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
 
-      let windowWidth = window.innerWidth;
-      let startPositionX = Math.random() * windowWidth;
-      let size = Math.random() * 10 + 5; // Entre 5px y 15px
-      let colors = ["#ff69b4", "#00bfff", "#32cd32", "#ff6347", "#8a2be2", "#ffd700"];
-      let randomColor = colors[Math.floor(Math.random() * colors.length)];
-      let animationDuration = Math.random() * 2 + 2; // Entre 2s y 4s
+    let windowWidth = window.innerWidth;
+    let startPositionX = Math.random() * windowWidth;
+    let size = Math.random() * 10 + 5; // Entre 5px y 15px
+    let colors = [
+      "#ff69b4",
+      "#00bfff",
+      "#32cd32",
+      "#ff6347",
+      "#8a2be2",
+      "#ffd700",
+    ];
+    let randomColor = colors[Math.floor(Math.random() * colors.length)];
+    let animationDuration = Math.random() * 2 + 2; // Entre 2s y 4s
 
-      confetti.style.left = startPositionX + "px";
-      confetti.style.width = size + "px";
-      confetti.style.height = size + "px";
-      confetti.style.backgroundColor = randomColor;
-      confetti.style.animation = `fall ${animationDuration}s linear forwards`;
+    confetti.style.left = startPositionX + "px";
+    confetti.style.width = size + "px";
+    confetti.style.height = size + "px";
+    confetti.style.backgroundColor = randomColor;
+    confetti.style.animation = `fall ${animationDuration}s linear forwards`;
 
-      document.getElementById("confetti-container").appendChild(confetti);
+    document.getElementById("confetti-container").appendChild(confetti);
 
-      setTimeout(() => {
-          confetti.remove();
-      }, animationDuration * 1000);
+    setTimeout(() => {
+      confetti.remove();
+    }, animationDuration * 1000);
   }
 }
 
@@ -443,7 +507,7 @@ function goHome(actualPage) {
   stopInterval();
   currentText = 0;
   $(".flipped").removeClass("flipped");
-  $('#modalEndQuiz').removeClass('active');
+  $("#modalEndQuiz").removeClass("active");
 
   if (actualPage.toLowerCase() == "team") {
     const containerTeam = $("#container-team");
@@ -468,7 +532,7 @@ function goHome(actualPage) {
 
     setTimeout(() => {
       loadIntro();
-  }, 100);
+    }, 100);
   } else if (actualPage.toLowerCase() == "quiz") {
     const containerQuiz = $("#container-quiz");
     const containerIndex = $("#container-index");
@@ -492,9 +556,8 @@ function goHome(actualPage) {
 
     setTimeout(() => {
       loadIntro();
-  }, 100);
-  }
-  else {
+    }, 100);
+  } else {
     const containerLinks = $("#container-links");
     const containerIndex = $("#container-index");
 
@@ -517,7 +580,7 @@ function goHome(actualPage) {
 
     setTimeout(() => {
       loadIntro();
-  }, 100);
+    }, 100);
   }
 }
 
@@ -537,23 +600,22 @@ jQuery.fn.removeClassExcept = function (val) {
 
 document.querySelectorAll(".team-member-card").forEach((card) => {
   card.addEventListener("click", function () {
-      this.classList.toggle("flipped");
+    this.classList.toggle("flipped");
   });
 });
 
-$('#btn-open-modal-linkedin').on('click', function () {
-  $('#modalLinkedIn').addClass('active');
+$("#btn-open-modal-linkedin").on("click", function () {
+  $("#modalLinkedIn").addClass("active");
 });
 
-$('#btn-close-modal-linkedin').on('click', function () {
-  $('#modalLinkedIn').removeClass('active');
+$("#btn-close-modal-linkedin").on("click", function () {
+  $("#modalLinkedIn").removeClass("active");
 });
 
-
-$('#btn-open-modal-quiz').on('click', function () {
-  $('#modalEndQuiz').addClass('active');
+$("#btn-open-modal-quiz").on("click", function () {
+  $("#modalEndQuiz").addClass("active");
 });
 
-$('#btn-close-modal-quiz').on('click', function () {
-  $('#modalEndQuiz').removeClass('active');
+$("#btn-close-modal-quiz").on("click", function () {
+  $("#modalEndQuiz").removeClass("active");
 });

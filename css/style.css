@@ -390,7 +390,7 @@ body {
 }
 
 .progress {
-    width: 25%; /* Este será el ancho inicial del progreso */
+    width: 0%; /* Este será el ancho inicial del progreso */
     height: 10px;
     background-color: #2DA06A;
     border-radius: 8px;
