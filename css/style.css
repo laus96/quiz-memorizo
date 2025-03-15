@@ -175,7 +175,7 @@ body {
     /* Asegura que el logo nunca exceda el 100% del contenedor */
     height: auto;
     /* Mantiene la proporción del logo */
-    max-height: 200px;
+    max-height: 220px;
     /* Limita la altura máxima del logo */
     margin-bottom: 20px;
 }
@@ -203,7 +203,7 @@ body {
     padding: 10px 15px;
     border-radius: 20px;
     position: relative;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -657,14 +657,15 @@ body {
 /* 📱 MEDIA RESPONSIVE 📱 */
 /* ========================== */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .logo {
-        max-height: 150px;
+        max-height: 190px;
     }
 
     .speech-bubble {
-        font-size: 12px;
+        font-size: 15px;
         padding: 8px 12px;
+
     }
 
     .btn {
@@ -674,7 +675,7 @@ body {
     }
 
     .question-number {
-        font-size: 16px;
+        font-size: 15px;
         /* Tamaño de fuente más pequeño en pantallas pequeñas */
     }
 
@@ -697,7 +698,7 @@ body {
 
     /* Reducir tamaño del texto de la pregunta en pantallas medianas */
     .question-text {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     /* Ajustes para las opciones */
@@ -708,23 +709,26 @@ body {
 
     .card-team-content .team-member-card {
         width: calc(50% - 10px);
+        height: 150px;
+       
     }
 }
 
 @media (max-width: 480px) {
     .logo {
-        max-height: 120px;
+        max-height: 180px;
     }
 
     .speech-bubble {
-        font-size: 10px;
+        font-size: 14px;
         padding: 6px 10px;
         max-width: 90%;
+        background-color: #176544 !important;
     }
 
     .btn {
-        font-size: 14px;
-        font-weight: 450;
+        font-size: 15px;
+        font-weight: 500;
 
     }
 
@@ -757,11 +761,13 @@ body {
 
     /* Ajustes para las opciones */
     .option {
-        font-size: 12px;
+        font-size: 14px;
         /* Reducir aún más el tamaño de las opciones */
     }
 
     .card-team-content .team-member-card {
         width: calc(50% - 10px);
+        height: 120px;
+
     }
 }
