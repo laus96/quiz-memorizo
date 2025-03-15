@@ -59,6 +59,19 @@ const memoSpeaksCongrats = [
   },
 ];
 
+const memoSpeaksTeam = [
+  {
+    text: "¡Toca en cada tarjeta para girarla y saber más!",
+    imageUrl: "assets/icons/memo-muyfeliz.png",
+    animation: "animate__animated animate__jello",
+  },
+  {
+    text: "Conoce a todos mis compañeros.",
+    imageUrl: "assets/icons/memo-sonrisa.png",
+    animation: "animate__animated animate__bounce",
+  },
+];
+
 const questions = [
   {
     questionText: "¿Cómo se llama?",
@@ -108,14 +121,13 @@ function loadIntro() {
       memoBubble.text(memoSpeaking.text).removeClass("change");
     }, 250);
 
-    memoImage.removeClassExcept("logo")
+    memoImage.removeClassExcept("logo");
 
     void memoImage[0].offsetWidth;
     memoImage
       .attr("src", memoSpeaking.imageUrl)
       .addClass(memoSpeaking.animation);
   }, 100);
-
 }
 
 function navigateMemo(direction) {
@@ -306,7 +318,7 @@ function loadLinks() {
     setTimeout(() => {
       memoBubble.text(memoSpeaking.text).removeClass("change");
     }, 250);
-    memoImage.removeClassExcept("logo")
+    memoImage.removeClassExcept("logo");
 
     void memoImage[0].offsetWidth;
     memoImage
@@ -341,130 +353,164 @@ function viewTeam() {
 
   cardLinks.addClass("page-out");
   cardTeam.addClass("page-in");
+
+  currentText = 0;
+
+  stopInterval();
+
+  loadTeam();
+  if (challengeEnded) startConfetti();
+  else stopConfetti();
+
+  interval = setInterval(() => {
+    loadTeam();
+  }, 4500);
+}
+
+function loadTeam() {
+  let memoBubble = $("#memo-bubble-team");
+  let memoImage = $("#memo-team");
+  let memoSpeaking;
+
+  if (currentText > memoSpeaksTeam.length - 1) currentText = 0;
+
+  memoSpeaking = memoSpeaksTeam[currentText];
+
+  currentText++;
+
+  setTimeout(() => {
+    memoBubble.addClass("change");
+    setTimeout(() => {
+      memoBubble.text(memoSpeaking.text).removeClass("change");
+    }, 250);
+    memoImage.removeClassExcept("logo-small");
+
+    void memoImage[0].offsetWidth;
+    memoImage
+      .attr("src", memoSpeaking.imageUrl)
+      .addClass(memoSpeaking.animation);
+  }, 100);
 }
 
 // CONFETTI
 function createConfetti() {
+  var confetti = $('<div class="confetti"></div>');
 
-    var confetti = $('<div class="confetti"></div>');
+  var windowWidth = $(window).width();
+  var startPositionX = Math.random() * windowWidth + (Math.random() * 50 - 25); // Añade variación
+  var size = Math.random() * 10 + 5;
+  var colors = [
+    "#ff69b4",
+    "#00bfff",
+    "#32cd32",
+    "#ff6347",
+    "#8a2be2",
+    "#ffd700",
+  ];
+  var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-    var windowWidth = $(window).width();
-    var startPositionX = Math.random() * windowWidth + (Math.random() * 50 - 25); // Añade variación
-    var size = Math.random() * 10 + 5;
-    var colors = [
-      "#ff69b4",
-      "#00bfff",
-      "#32cd32",
-      "#ff6347",
-      "#8a2be2",
-      "#ffd700",
-    ];
-    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  confetti.css({
+    left: Math.max(0, Math.min(startPositionX, windowWidth - size)), // Evita que salga fuera de pantalla
+    width: size,
+    height: size,
+    backgroundColor: randomColor,
+  });
 
-    confetti.css({
-      left: Math.max(0, Math.min(startPositionX, windowWidth - size)), // Evita que salga fuera de pantalla
-      width: size,
-      height: size,
-      backgroundColor: randomColor,
-    });
+  $("#confetti-container").append(confetti);
 
-    $("#confetti-container").append(confetti);
-
-    confetti.on("animationend", function () {
-      confetti.remove();
-    });
-  
+  confetti.on("animationend", function () {
+    confetti.remove();
+  });
 }
 
-
-  function startConfetti() {
-    if (challengeEnded) {
-      if (!confetti) {
-        console.log("Iniciando confeti...");
-        confetti = setInterval(function () {
-          createConfetti();
-        }, 250);
-      }
-    } else {
-      stopConfetti();
+function startConfetti() {
+  if (challengeEnded) {
+    if (!confetti) {
+      console.log("Iniciando confeti...");
+      confetti = setInterval(function () {
+        createConfetti();
+      }, 250);
     }
-  }
-  function stopConfetti() {
-    if (confetti) {
-      clearInterval(confetti);
-      confetti = null;
-    }
-    $(".confetti").remove();
-  }
-  function goHome(actualPage) {
+  } else {
     stopConfetti();
-    stopInterval();
-    currentText = 0;
-    $(".flipped").removeClass("flipped");
-
-    if (actualPage.toLowerCase() == "team") {
-      const containerTeam = $("#container-team");
-      const containerIndex = $("#container-index");
-
-      const cardTeam = $("#card-team");
-      const cardIndex = $("#card-index");
-
-      containerTeam.css("display", "none");
-      containerIndex.css("display", "");
-
-      cardTeam.removeClass("page-in");
-      cardTeam.removeClass("page-out");
-
-      cardIndex.removeClass("page-in");
-      cardIndex.removeClass("page-out");
-
-      cardTeam.addClass("page-out");
-      cardIndex.addClass("page-in");
-
-      currentText = 0;
-
-      loadIntro();
-    } else {
-      const containerLinks = $("#container-links");
-      const containerIndex = $("#container-index");
-
-      const cardLinks = $("#card-links");
-      const cardIndex = $("#card-index");
-
-      containerLinks.css("display", "none");
-      containerIndex.css("display", "");
-
-      cardLinks.removeClass("page-in");
-      cardLinks.removeClass("page-out");
-
-      cardIndex.removeClass("page-in");
-      cardIndex.removeClass("page-out");
-
-      cardLinks.addClass("page-out");
-      cardIndex.addClass("page-in");
-
-      currentText = 0;
-
-      loadIntro();
-    }
   }
+}
+function stopConfetti() {
+  if (confetti) {
+    clearInterval(confetti);
+    confetti = null;
+  }
+  $(".confetti").remove();
+}
+function goHome(actualPage) {
+  stopConfetti();
+  stopInterval();
+  currentText = 0;
+  $(".flipped").removeClass("flipped");
 
-  $("#redirectFullFigma, #redirectFigmaReto").on("click", () => {
-    window.location.href =
-      "https://www.figma.com/design/Ukmyr87dnhrV4wcsDsPHFs/Memorizo?node-id=6-1419&t=zWgpAXYRgDiykEzZ-1";
-  });
+  if (actualPage.toLowerCase() == "team") {
+    const containerTeam = $("#container-team");
+    const containerIndex = $("#container-index");
 
-  $(document).ready(() => {
+    const cardTeam = $("#card-team");
+    const cardIndex = $("#card-index");
+
+    containerTeam.css("display", "none");
+    containerIndex.css("display", "");
+
+    cardTeam.removeClass("page-in");
+    cardTeam.removeClass("page-out");
+
+    cardIndex.removeClass("page-in");
+    cardIndex.removeClass("page-out");
+
+    cardTeam.addClass("page-out");
+    cardIndex.addClass("page-in");
+
+    currentText = 0;
+
     loadIntro();
-  });
-  jQuery.fn.removeClassExcept = function (val) {
-    return this.each(function () {
-      $(this).removeClass().addClass(val);
-    });
-  };
+  } else {
+    const containerLinks = $("#container-links");
+    const containerIndex = $("#container-index");
 
-  document.querySelectorAll(".team-member-card").forEach(card => {
-    card.addEventListener("click", function () {
-      this.classList.toggle("flipped");
-    });
+    const cardLinks = $("#card-links");
+    const cardIndex = $("#card-index");
+
+    containerLinks.css("display", "none");
+    containerIndex.css("display", "");
+
+    cardLinks.removeClass("page-in");
+    cardLinks.removeClass("page-out");
+
+    cardIndex.removeClass("page-in");
+    cardIndex.removeClass("page-out");
+
+    cardLinks.addClass("page-out");
+    cardIndex.addClass("page-in");
+
+    currentText = 0;
+
+    loadIntro();
+  }
+}
+
+$("#redirectFullFigma, #redirectFigmaReto").on("click", () => {
+  window.location.href =
+    "https://www.figma.com/design/Ukmyr87dnhrV4wcsDsPHFs/Memorizo?node-id=6-1419&t=zWgpAXYRgDiykEzZ-1";
+});
+
+$(document).ready(() => {
+  loadIntro();
+});
+jQuery.fn.removeClassExcept = function (val) {
+  return this.each(function () {
+    $(this).removeClass().addClass(val);
   });
+};
+
+document.querySelectorAll(".team-member-card").forEach((card) => {
+  card.addEventListener("click", function () {
+    this.classList.toggle("flipped");
+  });
+});
