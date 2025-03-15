@@ -4,6 +4,7 @@ let currentQuestionIndex = 0;
 let challengeEnded = false;
 let interval;
 let confetti;
+const modal = document.getElementById("team-modal");
 
 const memoSpeaksIntro = [
   {
@@ -48,7 +49,7 @@ const memoSpeaksCongrats = [
     animation: "animate__animated animate__jello",
   },
   {
-    text: "Lo prometido es deuda, aquí tienes los enlaces de la presentación.",
+    text: "Aquí tienes los enlaces de la presentación.",
     imageUrl: "assets/icons/memo-sonrisa.png",
     animation: "animate__animated animate__bounce",
   },
@@ -105,7 +106,7 @@ function loadIntro() {
   const memoBubble = $("#memo-bubble-intro");
   const memoImage = $("#memo-intro");
   const btnBack = $("#btn-back-intro");
-  const btnNext = $("#btn-next");
+  const btnNext = $("#btn-next-intro");
   const btnEmpezar = $("#btn-start-intro");
   const memoSpeaking = memoSpeaksIntro[currentText];
 
@@ -394,33 +395,29 @@ function loadTeam() {
 
 // CONFETTI
 function createConfetti() {
-  var confetti = $('<div class="confetti"></div>');
+  for (let i = 0; i < 3; i++) { // Solo 3 confetis por llamada
+      let confetti = document.createElement("div");
+      confetti.classList.add("confetti");
 
-  var windowWidth = $(window).width();
-  var startPositionX = Math.random() * windowWidth + (Math.random() * 50 - 25); // Añade variación
-  var size = Math.random() * 10 + 5;
-  var colors = [
-    "#ff69b4",
-    "#00bfff",
-    "#32cd32",
-    "#ff6347",
-    "#8a2be2",
-    "#ffd700",
-  ];
-  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      let windowWidth = window.innerWidth;
+      let startPositionX = Math.random() * windowWidth;
+      let size = Math.random() * 10 + 5; // Entre 5px y 15px
+      let colors = ["#ff69b4", "#00bfff", "#32cd32", "#ff6347", "#8a2be2", "#ffd700"];
+      let randomColor = colors[Math.floor(Math.random() * colors.length)];
+      let animationDuration = Math.random() * 2 + 2; // Entre 2s y 4s
 
-  confetti.css({
-    left: Math.max(0, Math.min(startPositionX, windowWidth - size)), // Evita que salga fuera de pantalla
-    width: size,
-    height: size,
-    backgroundColor: randomColor,
-  });
+      confetti.style.left = startPositionX + "px";
+      confetti.style.width = size + "px";
+      confetti.style.height = size + "px";
+      confetti.style.backgroundColor = randomColor;
+      confetti.style.animation = `fall ${animationDuration}s linear forwards`;
 
-  $("#confetti-container").append(confetti);
+      document.getElementById("confetti-container").appendChild(confetti);
 
-  confetti.on("animationend", function () {
-    confetti.remove();
-  });
+      setTimeout(() => {
+          confetti.remove();
+      }, animationDuration * 1000);
+  }
 }
 
 function startConfetti() {
@@ -429,7 +426,7 @@ function startConfetti() {
       console.log("Iniciando confeti...");
       confetti = setInterval(function () {
         createConfetti();
-      }, 250);
+      }, 150);
     }
   } else {
     stopConfetti();
@@ -513,4 +510,14 @@ document.querySelectorAll(".team-member-card").forEach((card) => {
   card.addEventListener("click", function () {
       this.classList.toggle("flipped");
   });
+});
+
+// Mostrar el modal
+document.querySelector('.open-modal-btn').addEventListener('click', function () {
+  document.querySelector('.modal').classList.add('active');
+});
+
+// Cerrar el modal
+document.querySelector('.close-btn').addEventListener('click', function () {
+  document.querySelector('.modal').classList.remove('active');
 });

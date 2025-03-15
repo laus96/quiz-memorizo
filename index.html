@@ -58,6 +58,7 @@
     <!-- QUIZ -->
     <div class="container" id="container-quiz" style="display: none;">
         <div class="card" id="card-quiz">
+
             <div class="card-header">
                 <div class="progress-container">
                     <div class="question-number">Pregunta <span id="questionNumber">1</span>/4</span></div>
@@ -92,6 +93,8 @@
     <!-- LINKS -->
     <div class="container" id="container-links" style="display: none;">
         <div class="card" id="card-links">
+            <div id="confetti-container"></div>
+
             <div class="card-header">¡Comienza el Reto de Memorizo!</div>
             <div class="card-content">
                 <div id="memo-speech-links" class="speech-bubble">
@@ -101,7 +104,7 @@
             </div>
             <div class="card-footer">
                 <button id="redirectFullFigma" class="btn btn-large btn-primary">
-                    <span><i class="fa-solid fa-figma"></i> Prototipo en Figma</span>
+                    <span><i class="fa-brands fa-figma"></i> Prototipo en Figma</span>
                 </button>
                 <button onclick="viewTeam();" class="btn btn-large btn-secondary">
                     <span><i class="fa-solid fa-people-group"></i> Ver equipo</span>
@@ -115,8 +118,70 @@
     <!-- LINKS -->
 
     <!-- LINKS -->
+
     <div class="container" id="container-team" style="display: none;">
         <div class="card" id="card-team">
+            <div id="modalLinkedIn" class="modal">
+                <div class="modal-content">
+                    <!-- Header del Modal -->
+                    <div class="modal-header">
+                        <h2>Conectar en LinkedIn</h2>
+                        <button class="close-btn" id="closeModalBtn">&times;</button>
+                    </div>
+
+                    <!-- Cuerpo del Modal -->
+                    <div class="modal-body">
+                        <p>Conéctate con nuestros miembros en LinkedIn para más información:</p>
+                        <div class="social-links">
+                            <!-- Enlace de LinkedIn para John -->
+                            <a href="https://www.linkedin.com/in/john-doe/" target="_blank" class="social-link">
+                                <div class="circle">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="text">John Doe</span>
+                                    <span class="description">Senior Developer</span>
+                                </div>
+                            </a>
+
+                            <!-- Enlace de LinkedIn para Jane -->
+                            <a href="https://www.linkedin.com/in/jane-smith/" target="_blank" class="social-link">
+                                <div class="circle">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="text">Jane Smith</span>
+                                    <span class="description">UX Designer</span>
+                                </div>
+                            </a>
+
+                            <!-- Enlace de LinkedIn para Alice -->
+                            <a href="https://www.linkedin.com/in/alice-johnson/" target="_blank" class="social-link">
+                                <div class="circle">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="text">Alice Johnson</span>
+                                    <span class="description">Product Manager</span>
+                                </div>
+                            </a>
+
+                            <!-- Enlace de LinkedIn para Bob -->
+                            <a href="https://www.linkedin.com/in/bob-lee/" target="_blank" class="social-link">
+                                <div class="circle">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <span class="text">Bob Lee</span>
+                                    <span class="description">Backend Developer</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
             <div class="card-header">
                 <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo-small"
                     id="memo-team">
@@ -127,11 +192,13 @@
 
             </div>
             <div class="card-team-content">
+
                 <div class="team-container">
                     <!-- Tarjeta 1 -->
                     <div class="team-member-card">
                         <div class="inner-card">
-                            <div class="front" style="background-image: url('assets/images/persona_1.jpg');background-size: cover">
+                            <div class="front"
+                                style="background-image: url('assets/images/persona_1.jpg');background-size: cover">
                                 <div class="card-text">Borja</div>
                                 <div class="card-subtext">Perea</div>
                             </div>
@@ -141,67 +208,67 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <!-- Tarjeta 2 -->
                     <div class="team-member-card">
                         <div class="inner-card">
-                            <div class="front" style="background-image: url('assets/images/persona_2.jpg');background-size: cover"">
-                                <div class="card-text">Macarena</div>
-                                <div class="card-subtext">Goytre</div>
-                            </div>
-                            <div class="back">
-                                <div class="card-text">Brading y diseño</div>
-                                <p class="card-description">Descripcion.</p>
-                            </div>
+                            <div class="front"
+                                style="background-image: url('assets/images/persona_2.jpg');background-size: cover"">
+                                <div class=" card-text">Macarena</div>
+                            <div class="card-subtext">Goytre</div>
                         </div>
-                    </div>
-            
-                    <!-- Tarjeta 3 -->
-                    <div class="team-member-card">
-                        <div class="inner-card">
-                            <div class="front" style="background-image: url('assets/images/persona_3.jpg');background-size: cover"">
-                                <div class="card-text">Carlos</div>
-                                <div class="card-subtext">Miguel Fuentes</div>
-                            </div>
-                            <div class="back">
-                                <div class="card-text">Demo de Memorizo</div>
-                                <p class="card-description">Descripcion.</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <!-- Tarjeta 4 -->
-                    <div class="team-member-card">
-                        <div class="inner-card">
-                            <div class="front" style="background-image: url('assets/images/persona_4.jpg');background-size: cover"">
-                                <div class="card-text">Laura</div>
-                                <div class="card-subtext">Saro</div>
-                            </div>
-                            <div class="back">
-                                <div class="card-text">Sistema de componentes</div>
-                                <p class="card-description">Descripcion.</p>
-                            </div>
+                        <div class="back">
+                            <div class="card-text">Brading y diseño</div>
+                            <p class="card-description">Descripcion.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="team-member-card">
+                    <div class="inner-card">
+                        <div class="front"
+                            style="background-image: url('assets/images/persona_3.jpg');background-size: cover"">
+                                <div class=" card-text">Carlos</div>
+                        <div class="card-subtext">Miguel Fuentes</div>
+                    </div>
+                    <div class="back">
+                        <div class="card-text">Demo de Memorizo</div>
+                        <p class="card-description">Descripcion.</p>
+                    </div>
+                </div>
             </div>
-            
-            
-            
-            <div class="card-footer">
-                <div class="btn-row">
-                    <button id="btn-back-intro" onclick="navigateMemo('back')" class="btn btn-small btn-contrast">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button id="btn-next-intro" onclick="navigateMemo('next')" class="btn btn-small btn-secondary">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                    <button id="btn-start-intro" onclick="startQuiz()" class="btn btn-medium btn-secondary">
-                        <span><i class="fa-solid fa-gamepad"></i> Empezar</span>
-                    </button>
+
+            <!-- Tarjeta 4 -->
+            <div class="team-member-card">
+                <div class="inner-card">
+                    <div class="front"
+                        style="background-image: url('assets/images/persona_4.jpg');background-size: cover"">
+                                <div class=" card-text">Laura</div>
+                    <div class="card-subtext">Saro</div>
+                </div>
+                <div class="back">
+                    <div class="card-text">Sistema de componentes</div>
+                    <p class="card-description">Descripcion.</p>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
+
+
+
+    <div class="card-footer">
+        <div class="btn-row">
+            <button id="btn-back-intro" onclick="goLinks('team')" class="btn btn-small btn-contrast">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button id="btn-start-intro" class="btn btn-small btn-primary open-modal-btn">
+                <span><i class="fa-solid fa-info"></i> </span>
+            </button>
+        </div>
+    </div>
+    </div>
     </div>
     <!-- LINKS -->
 

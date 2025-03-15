@@ -37,7 +37,7 @@
 
     --shadow-light: rgba(0, 0, 0, 0.1);
     --shadow-dark: rgba(0, 0, 0, 0.3);
-    --shadow-brand: 2px 2px var(--primary-highlight);
+    --shadow-brand: 3px 3px var(--primary-highlight);
     --shadow-secondary: 2px 2px var(--secondary-highlight);
     --shadow-contrast: 2px 2px var(--border-dark);
 
@@ -553,6 +553,181 @@ body {
     transform: rotateY(180deg);
 }
 
+/* ℹ️ INFO MODAL ℹ️*/
+/* ========================== */
+
+/* Estilo del fondo del modal */
+/* Fondo del modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999; /* Aseguramos que el modal se quede por encima de otros elementos */
+}
+
+/* Modal activo */
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+    background-color: #fff;
+    border-radius: 12px; /* Bordes redondeados */
+    width: 90%;
+    max-width: 700px;
+    padding: 25px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    overflow-y: auto;
+    max-height: 80vh;
+    overflow-x: hidden;
+    transition: transform 0.3s ease-out;
+}
+
+/* Header del modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.modal-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-header .close-btn:hover {
+    color: #ff5733; /* Color al pasar el mouse */
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Pie de modal con botones */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Estilo de botones */
+.modal-footer .btn {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+/* Contenedor de los enlaces sociales */
+.social-links {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en filas */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 10px;
+    margin-top: 20px;
+    max-height: 300px;
+    justify-content: center; /* Alineación centrada */
+}
+
+/* Cada enlace */
+.social-link {
+    display: flex;
+    flex-direction: row; /* Íconos y texto alineados horizontalmente */
+    align-items: center;
+    text-decoration: none;
+    gap: 8px; /* Reducir espacio entre el ícono y el texto */
+    padding: 8px 16px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: calc(50% - 10px); /* Hacer cada enlace ocupar el 50% del ancho */
+    margin: 6px 0;
+}
+
+/* Hover effect para cada enlace */
+.social-link:hover {
+    transform: scale(1.05);
+    background-color: #0077b5; /* Fondo LinkedIn en hover */
+    color: white; /* Cambiar el color del texto a blanco */
+}
+
+/* Ícono de LinkedIn */
+.social-link .circle {
+    font-size: 1.3em;  /* Reducir tamaño del ícono */
+    color: #0077b5; /* Color LinkedIn */
+}
+
+/* Texto dentro de cada enlace */
+.social-link .text {
+    font-size: 1em; /* Reducir el tamaño del nombre */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Descripción de cada enlace */
+.social-link .description {
+    font-size: 0.8em; /* Reducir el tamaño de la descripción */
+    color: #555;
+    margin-top: 4px;
+    display: block;
+}
+
+/* 🎊 CONFETTI 🎊*/
+/* ========================== */
+
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff69b4;
+    border-radius: 50%; /* Hacerlo más parecido a confeti real */
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
 /* 🎬 ANIMATION 🎬*/
 /* ========================== */
 
@@ -654,6 +829,26 @@ body {
     }
 }
 
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /* 📱 MEDIA RESPONSIVE 📱 */
 /* ========================== */
 
@@ -712,6 +907,35 @@ body {
         height: 150px;
        
     }
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.1em;
+    }
+
+    .modal-body {
+        font-size: 1em;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-link {
+        width: calc(50% - 10px); /* Mantener 2 enlaces por fila en pantallas pequeñas */
+    }
+
+    .social-link .text {
+        font-size: 0.9em;
+    }
+
+    .social-link .description {
+        font-size: 0.75em;
+    }
+
 }
 
 @media (max-width: 480px) {
