@@ -7,16 +7,16 @@
     <title>Reto del Pitch de Memorizo</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 
-    <!-- Estilos -->
+    <!-- STYLE -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/libs/animate.css">
 
-    <!-- Fuentes -->
+    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome -->
+    <!-- FONTAWESOME -->
     <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
     <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
@@ -26,8 +26,10 @@
 <body>
     <!-- INDEX -->
     <div class="container" id="container-index">
-        <div class="card">
-            <div class="card-header">¡Comienza el Reto de Memorizo!</div>
+        <div class="card page-in" id="card-index">
+            <div class="card-header">
+                <p class="text">¡Comienza el Reto de Memorizo!</p>
+            </div>
             <div class="card-content">
                 <div id="memo-speech-intro" class="speech-bubble">
                     <span id="memo-bubble-intro"></span>
@@ -58,10 +60,35 @@
     <!-- QUIZ -->
     <div class="container" id="container-quiz" style="display: none;">
         <div class="card" id="card-quiz">
+            <div id="modalEndQuiz" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Salir del reto</h2>
+                    </div>
 
+                    <div class="modal-body">
+                        <p> ¿Estás seguro de que deseas salir del reto? Volverás a la pantalla de inicio. </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-close-modal-quiz" class="btn btn-small btn-secondary">
+                            <span>No</span>
+                        </button>
+                        <button id="btn" onclick="goHome('quiz')" class="btn btn-small btn-contrast">
+                            <span>Si</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
             <div class="card-header">
                 <div class="progress-container">
-                    <div class="question-number">Pregunta <span id="questionNumber">1</span>/4</span></div>
+                    <div class="progress-header">
+                        <span id="btn-open-modal-quiz" class="btn btn-small btn-contrast close-btn"><i
+                                class="fa-solid fa-xmark"></i> </span>
+
+                        <div class="question-number">
+                            Pregunta <span id="questionNumber">1</span>/4
+                        </div>
+                    </div>
                     <div class="progress-bar">
                         <div class="progress" id="progress"></div>
                     </div>
@@ -72,15 +99,12 @@
                     <img id="questionImage" alt="Imagen de la pregunta">
                 </div>
 
-                <!-- Pregunta -->
                 <h2 id="questionText" class="question-text"></h2>
 
-                <!-- Opciones de respuesta -->
                 <div class="options">
                     <button class="option"></button>
                     <button class="option"></button>
                     <button class="option"></button>
-                    <!--<span id="feedback" class="feedback">text</span>-->
                 </div>
             </div>
             <div class="card-footer">
@@ -117,23 +141,19 @@
     </div>
     <!-- LINKS -->
 
-    <!-- LINKS -->
-
+    <!-- TEAM -->
     <div class="container" id="container-team" style="display: none;">
         <div class="card" id="card-team">
             <div id="modalLinkedIn" class="modal">
                 <div class="modal-content">
-                    <!-- Header del Modal -->
                     <div class="modal-header">
                         <h2>Conectar en LinkedIn</h2>
-                            <span id="closeModalBtn" class="btn-icon close-btn"><i class="fa-solid fa-xmark"></i> </span>
+                        <span id="btn-close-modal-linkedin" class="btn-icon close-btn"><i class="fa-solid fa-xmark"></i>
+                        </span>
                     </div>
-
-                    <!-- Cuerpo del Modal -->
                     <div class="modal-body">
                         <p>Conéctate con nuestros miembros en LinkedIn para más información:</p>
                         <div class="social-links">
-                            <!-- Enlace de LinkedIn para John -->
                             <a href="" target="_blank" class="social-link">
                                 <div class="circle">
                                     <i class="fab fa-linkedin-in"></i>
@@ -144,7 +164,6 @@
                                 </div>
                             </a>
 
-                            <!-- Enlace de LinkedIn para Jane -->
                             <a href="" target="_blank" class="social-link">
                                 <div class="circle">
                                     <i class="fab fa-linkedin-in"></i>
@@ -155,7 +174,6 @@
                                 </div>
                             </a>
 
-                            <!-- Enlace de LinkedIn para Alice -->
                             <a href="" target="_blank" class="social-link">
                                 <div class="circle">
                                     <i class="fab fa-linkedin-in"></i>
@@ -166,7 +184,6 @@
                                 </div>
                             </a>
 
-                            <!-- Enlace de LinkedIn para Bob -->
                             <a href="" target="_blank" class="social-link">
                                 <div class="circle">
                                     <i class="fab fa-linkedin-in"></i>
@@ -177,24 +194,19 @@
                                 </div>
                             </a>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-            <div class="card-header">
+            <div class="card-header-bubble">
                 <img src="assets/icons/memo-base.png" class="logo" alt="¡Hola, soy Memo!" class="logo-small"
                     id="memo-team">
 
                 <div class="speech-bubble-left" id="memo-speech-team">
                     <span id="memo-bubble-team"></span>
                 </div>
-
             </div>
             <div class="card-team-content">
-
                 <div class="team-container">
-                    <!-- Tarjeta 1 -->
                     <div class="team-member-card">
                         <div class="inner-card">
                             <div class="front"
@@ -209,7 +221,6 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2 -->
                     <div class="team-member-card">
                         <div class="inner-card">
                             <div class="front"
@@ -224,7 +235,6 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta 3 -->
                 <div class="team-member-card">
                     <div class="inner-card">
                         <div class="front"
@@ -239,7 +249,6 @@
                 </div>
             </div>
 
-            <!-- Tarjeta 4 -->
             <div class="team-member-card">
                 <div class="inner-card">
                     <div class="front"
@@ -255,22 +264,19 @@
         </div>
     </div>
     </div>
-
-
-
     <div class="card-footer">
         <div class="btn-row">
             <button id="btn-back-intro" onclick="goLinks('team')" class="btn btn-small btn-contrast">
                 <i class="fa-solid fa-arrow-left"></i>
             </button>
-            <button id="btn-start-intro" class="btn btn-small btn-primary open-modal-btn">
+            <button id="btn-open-modal-linkedin" class="btn btn-small btn-primary">
                 <span><i class="fa-solid fa-info"></i> </span>
             </button>
         </div>
     </div>
     </div>
     </div>
-    <!-- LINKS -->
+    <!-- TEAM -->
 
     <!-- Scripts -->
     <script src="libs/jquery.js"></script>

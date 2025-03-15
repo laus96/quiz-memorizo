@@ -4,7 +4,6 @@ let currentQuestionIndex = 0;
 let challengeEnded = false;
 let interval;
 let confetti;
-const modal = document.getElementById("team-modal");
 
 const memoSpeaksIntro = [
   {
@@ -67,7 +66,7 @@ const memoSpeaksTeam = [
     animation: "animate__animated animate__bounce",
   },
   {
-    text: "!Conoce a mis compañeros¡",
+    text: "¡Conoce a mis compañeros!",
     imageUrl: "assets/icons/memo-sonrisa.png",
     animation: "animate__animated animate__bounce",
   },
@@ -444,6 +443,7 @@ function goHome(actualPage) {
   stopInterval();
   currentText = 0;
   $(".flipped").removeClass("flipped");
+  $('#modalEndQuiz').removeClass('active');
 
   if (actualPage.toLowerCase() == "team") {
     const containerTeam = $("#container-team");
@@ -466,8 +466,35 @@ function goHome(actualPage) {
 
     currentText = 0;
 
-    loadIntro();
-  } else {
+    setTimeout(() => {
+      loadIntro();
+  }, 100);
+  } else if (actualPage.toLowerCase() == "quiz") {
+    const containerQuiz = $("#container-quiz");
+    const containerIndex = $("#container-index");
+
+    const cardQuiz = $("#card-quiz");
+    const cardIndex = $("#card-index");
+
+    containerQuiz.css("display", "none");
+    containerIndex.css("display", "");
+
+    cardQuiz.removeClass("page-in");
+    cardQuiz.removeClass("page-out");
+
+    cardIndex.removeClass("page-in");
+    cardIndex.removeClass("page-out");
+
+    cardQuiz.addClass("page-out");
+    cardIndex.addClass("page-in");
+
+    currentText = 0;
+
+    setTimeout(() => {
+      loadIntro();
+  }, 100);
+  }
+  else {
     const containerLinks = $("#container-links");
     const containerIndex = $("#container-index");
 
@@ -488,7 +515,9 @@ function goHome(actualPage) {
 
     currentText = 0;
 
-    loadIntro();
+    setTimeout(() => {
+      loadIntro();
+  }, 100);
   }
 }
 
@@ -512,12 +541,22 @@ document.querySelectorAll(".team-member-card").forEach((card) => {
   });
 });
 
-// Mostrar el modal
-document.querySelector('.open-modal-btn').addEventListener('click', function () {
-  document.querySelector('.modal').classList.add('active');
+$('#btn-open-modal-linkedin').on('click', function () {
+  $('#modalLinkedIn').addClass('active');
 });
 
-// Cerrar el modal
-document.querySelector('.close-btn').addEventListener('click', function () {
-  document.querySelector('.modal').classList.remove('active');
+$('#btn-close-modal-linkedin').on('click', function () {
+  $('#modalLinkedIn').removeClass('active');
 });
+
+
+$('#btn-open-modal-quiz').on('click', function () {
+  $('#modalEndQuiz').addClass('active');
+});
+
+$('#btn-close-modal-quiz').on('click', function () {
+  $('#modalEndQuiz').removeClass('active');
+});
+
+
+
