@@ -557,6 +557,3 @@ $('#btn-open-modal-quiz').on('click', function () {
 $('#btn-close-modal-quiz').on('click', function () {
   $('#modalEndQuiz').removeClass('active');
 });
-
-
-
