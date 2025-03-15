@@ -511,6 +511,6 @@ jQuery.fn.removeClassExcept = function (val) {
 
 document.querySelectorAll(".team-member-card").forEach((card) => {
   card.addEventListener("click", function () {
-    this.classList.toggle("flipped");
+      this.classList.toggle("flipped");
   });
 });
