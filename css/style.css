@@ -324,6 +324,18 @@ body {
     cursor: not-allowed;
 }
 
+.btn-icon {
+    color: var(--text-disabled);
+    font-size: 18px!important;
+    cursor: pointer;
+
+}
+
+.btn-icon:hover {
+    color: var(--text-dark);
+
+}
+
 /* 🎮 QUIZ 🎮 */
 /* ========================== */
 
@@ -606,27 +618,14 @@ body {
 
 .modal-header h2 {
     font-size: 1.2em;
-    color: #333;
+    color: var(--text-dark);
     margin: 0;
-}
-
-.modal-header .close-btn {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    color: #555;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.modal-header .close-btn:hover {
-    color: #ff5733; /* Color al pasar el mouse */
 }
 
 /* Cuerpo del modal */
 .modal-body {
     font-size: 1.1em;
-    color: #333;
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -679,26 +678,26 @@ body {
 /* Hover effect para cada enlace */
 .social-link:hover {
     transform: scale(1.05);
-    background-color: #0077b5; /* Fondo LinkedIn en hover */
-    color: white; /* Cambiar el color del texto a blanco */
+    background-color: var(--secondary-color); /* Fondo LinkedIn en hover */
+    color: var(--text-light);
 }
 
 /* Ícono de LinkedIn */
 .social-link .circle {
     font-size: 1.3em;  /* Reducir tamaño del ícono */
-    color: #0077b5; /* Color LinkedIn */
+    color: var(--text-dark);
 }
 
 /* Texto dentro de cada enlace */
 .social-link .text {
-    font-size: 1em; /* Reducir el tamaño del nombre */
-    font-weight: bold;
-    color: #333;
+    font-size: 0.95em; /* Reducir el tamaño del nombre */
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
 /* Descripción de cada enlace */
 .social-link .description {
-    font-size: 0.8em; /* Reducir el tamaño de la descripción */
+    font-size: 0.7em; /* Reducir el tamaño de la descripción */
     color: #555;
     margin-top: 4px;
     display: block;
