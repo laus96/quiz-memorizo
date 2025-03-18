@@ -61,12 +61,12 @@ const memoSpeaksCongrats = [
 
 const memoSpeaksTeam = [
   {
-    text: "¡Toca en cada tarjeta saber más!",
+    text: "¡Toca en cada tarjeta para saber más!",
     imageUrl: "assets/icons/memo-muyfeliz.png",
     animation: "animate__animated animate__bounce",
   },
   {
-    text: "¡Conoce a mis compañeros!",
+    text: "¡Conoce a todos mis compañeros!",
     imageUrl: "assets/icons/memo-sonrisa.png",
     animation: "animate__animated animate__bounce",
   },
