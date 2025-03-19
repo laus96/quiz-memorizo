@@ -61,12 +61,12 @@ const memoSpeaksCongrats = [
 
 const memoSpeaksTeam = [
   {
-    text: "¡Toca en cada tarjeta para saber más!",
+    text: "¡Explora cada tarjeta con un toque!",
     imageUrl: "assets/icons/memo-muyfeliz.png",
     animation: "animate__animated animate__bounce",
   },
   {
-    text: "¡Conoce a todos mis compañeros!",
+    text: "Haz clic en información para más detalles.",
     imageUrl: "assets/icons/memo-sonrisa.png",
     animation: "animate__animated animate__bounce",
   },
@@ -75,27 +75,27 @@ const memoSpeaksTeam = [
 const questions = [
   {
     questionText: "¿Cómo se llama?",
-    imageUrl: "assets/images/persona_1.jpg",
+    imageUrl: "assets/images/pregunta_1.jpg",
     options: ["Borja", "Javier", "José"],
     correctAnswer: "Borja",
   },
   {
-    questionText: "¿Quién es?",
-    imageUrl: "assets/images/persona_2.jpg",
-    options: ["Helena", "Lorena", "Macarena"],
-    correctAnswer: "Macarena",
+    questionText: "¿Qué bebida prefiere Laura?",
+    imageUrl: "assets/images/pregunta_2.jpg",
+    options: ["Té", "Café", "Refresco"],
+    correctAnswer: "Café",
   },
   {
-    questionText: "¿Cómo se llama?",
-    imageUrl: "assets/images/persona_3.jpg",
-    options: ["Miguel", "Carlos", "Adrián"],
-    correctAnswer: "Carlos",
+    questionText: "¿De dónde es Maca?",
+    imageUrl: "assets/images/pregunta_3.jpg",
+    options: ["Vigo", "Málaga", "Sevilla"],
+    correctAnswer: "Sevilla",
   },
   {
-    questionText: "¿Cuál es su nombre?",
-    imageUrl: "assets/images/persona_4.jpg",
-    options: ["Sara", "Laura", "Paula"],
-    correctAnswer: "Laura",
+    questionText: "¿En qué año nació Carlos?",
+    imageUrl: "assets/images/pregunta_4.jpg",
+    options: ["2000", "2002", "1998"],
+    correctAnswer: "2002",
   },
 ];
 
