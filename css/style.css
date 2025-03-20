@@ -887,7 +887,9 @@ body {
         background-color: initial;
         cursor: initial;
     }
-
+.card-footer{
+    gap:35px;
+}
     .question-image {
         width: 65vw;
         height: 65vw;
@@ -961,7 +963,9 @@ body {
 
     }
 
-    
+    .card-footer{
+    gap:33px;
+}
     .btn-row {
         margin-bottom:5px;
 
@@ -1008,25 +1012,37 @@ body {
 
 @media (max-width: 325px) {
     .logo {
-        max-height: 160px;
+        max-height: 120px;
     }
 
     .speech-bubble {
-        font-size: 13px;
-        padding: 5px 8px;
+        font-size: 12px;
+        padding: 4px 8px;
         max-width: 90%;
     }
-
+.card-header .text {
+        font-size: 13px;
+    
+}
+    
     .btn {
         font-size: 15px;
         font-weight: 550;
 
     }
 
-    
+    .btn-small {
+        height: 30px;
+         width: 30px;
+
+    }
+
+    .btn-medium{
+        height: 30px;
+        
+    }
     .btn-row {
         margin-bottom:5px;
-
     }
     
     .question-number {
@@ -1066,4 +1082,7 @@ body {
         height: 100px;
 
     }
+    .card-footer{
+    gap:10px;
+}
 }
