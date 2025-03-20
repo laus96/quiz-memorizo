@@ -990,7 +990,10 @@ body {
         max-width: 180px;
         max-height: 180px;
     }
-
+    .btn-large{
+        height: 30px;
+        
+    }
     .question-text {
         font-size: 18px;
     }
@@ -1024,7 +1027,10 @@ body {
         font-size: 13px;
     
 }
+    .card-header {
+        font-size: 13px;
     
+}
     .btn {
         font-size: 15px;
         font-weight: 550;
