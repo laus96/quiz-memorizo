@@ -1005,3 +1005,65 @@ body {
 
     }
 }
+
+@media (max-width: 300px) {
+    .logo {
+        max-height: 160px;
+    }
+
+    .speech-bubble {
+        font-size: 13px;
+        padding: 5px 8px;
+        max-width: 90%;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: 550;
+
+    }
+
+    
+    .btn-row {
+        margin-bottom:5px;
+
+    }
+    
+    .question-number {
+        font-size: 15px;
+    }
+
+    .progress-bar {
+        height: 0.7vh;
+    }
+
+    .option:hover {
+        background-color: initial;
+        cursor: initial;
+    }
+
+    .question-image {
+        width: 50vw;
+        height: 50vw;
+        max-width: 160px;
+        max-height: 160px;
+    }
+
+    .question-text {
+        font-size: 17px;
+    }
+
+    .option {
+        font-size: 16px;
+         height:35px;
+    }
+    
+    .team-container {
+        padding:10px;
+    }
+    .card-team-content .team-member-card {
+        width: calc(50% - 10px);
+        height: 100px;
+
+    }
+}
