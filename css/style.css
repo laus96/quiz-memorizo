@@ -1089,4 +1089,8 @@ body {
     .card-footer{
     gap:10px;
 }
+    .speech-bubble,
+.speech-bubble-left {
+    font-size:11px;
+}
 }
