@@ -586,7 +586,7 @@ function goHome(actualPage) {
 
 $("#redirectFullFigma, #redirectFigmaReto").on("click", () => {
   window.location.href =
-    "https://www.figma.com/design/Ukmyr87dnhrV4wcsDsPHFs/Memorizo?node-id=6-1419&t=zWgpAXYRgDiykEzZ-1";
+    "https://www.figma.com/proto/Ukmyr87dnhrV4wcsDsPHFs/Memorizo?node-id=108-9318&t=8w7KFyu0D7y4eSFN-1";
 });
 
 $(document).ready(() => {
