@@ -1006,7 +1006,7 @@ body {
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 325px) {
     .logo {
         max-height: 160px;
     }
