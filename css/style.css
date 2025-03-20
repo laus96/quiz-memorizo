@@ -442,9 +442,9 @@ body {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 4vh;
+    gap: 2vh;
     width: 100%;
-    margin-bottom: 5vh;
+    margin-bottom: 1vh;
 }
 
 .option {
@@ -896,6 +896,7 @@ body {
 
     .option {
         font-size: 17px;
+        height:40px;
     }
 
     .card-team-content .team-member-card {
@@ -977,6 +978,7 @@ body {
 
     .option {
         font-size: 17px;
+         height:40px;
     }
 
     .card-team-content .team-member-card {
